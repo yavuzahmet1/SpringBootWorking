@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+Build-Jdk-Spec: 16
+Implementation-Title: AmiscodeexForBeginer
+Implementation-Version: 1.0-SNAPSHOT
+Created-By: Maven Integration for Eclipse
+
