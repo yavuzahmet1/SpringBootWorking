@@ -38,9 +38,5 @@ public class StudentService {
 
 
 
-    public void insertStudent(Student student) {
-        this.studentDao.insertStudentToDb(student);
-    }
-
 
 }

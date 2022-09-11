@@ -36,6 +36,7 @@ public class Student {
 	}
 
 	public void setCourse(String course) {
+
 		this.course = course;
 	}
 
