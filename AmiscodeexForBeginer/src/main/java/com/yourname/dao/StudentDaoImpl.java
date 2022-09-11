@@ -1,17 +1,17 @@
 package com.yourname.dao;
 
-import com.yourname.entity.Student;
-
 import java.util.Collection;
 
+import com.yourname.entity.Student;
+
 public interface StudentDaoImpl {
-    Collection<Student> getAllStudents();
+	Collection<Student> getAllStudents();
 
-    Student getStudentById(int id);
+	Student getStudentById(int id);
 
-    void removeStudentById(int id);
+	Student removeStudentById(int id);
 
-    void updateStudent(Student student);
+	void updateStudent(Student student);
 
-    void insertStudentToDb(Student student);
+	void insertStudentToDb(Student student);
 }

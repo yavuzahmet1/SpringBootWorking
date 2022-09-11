@@ -22,7 +22,9 @@ public class StudentDao implements StudentDaoImpl {
 				put(2, new Student(2, "Ahmet", "Computer Science"));
 				put(3, new Student(3, "Yavuz", "Computer Science"));
 				put(4, new Student(4, "Kaya", "Computer Enginer"));
-				put(5,new Student(5,"Erdoğan’ın açıklamaları sonrasında tetikteler: Yunanistan Cumhurbaşkanı’ndan manidar ziyaret","Bu yılın Mayıs ayına kadar ilişkilerin yolunda seyrettiği Ankara-Atina hattında tansiyon düşmek bilmiyor... Cumhurbaşkanı Erdoğan'ın Yunanistan'a yönelik açıklamalarını sertleştirdiği bir dönemde Yunanistan lideri Sakellaropoulou'dan \"zamanlaması manidar\" bir ziyaret hamlesi geldi."));
+				put(5, new Student(5,
+						"Erdoğan’ın açıklamaları sonrasında tetikteler: Yunanistan Cumhurbaşkanı’ndan manidar ziyaret",
+						"Bu yılın Mayıs ayına kadar ilişkilerin yolunda seyrettiği Ankara-Atina hattında tansiyon düşmek bilmiyor... Cumhurbaşkanı Erdoğan'ın Yunanistan'a yönelik açıklamalarını sertleştirdiği bir dönemde Yunanistan lideri Sakellaropoulou'dan \"zamanlaması manidar\" bir ziyaret hamlesi geldi."));
 			}
 		};
 	}
@@ -33,25 +35,25 @@ public class StudentDao implements StudentDaoImpl {
 	}
 
 	@Override
-	public Student getStudentById(int id){
-		return this.students.get(id);
+	public Student getStudentById(int id) {
+		return students.get(id);
 	}
 
 	@Override
-	public void removeStudentById(int id) {
-		this.students.remove(id);
+	public Student removeStudentById(int id) {
+		return students.remove(id);
 	}
 
 	@Override
-	public void updateStudent(Student student){
-		Student s =students.get(student.getId());
+	public void updateStudent(Student student) {
+		Student s = students.get(student.getId());
 		s.setCourse(student.getCourse());
 		s.setName(student.getName());
-		students.put(student.getId(),student);
+		students.put(student.getId(), student);
 	}
 
 	@Override
 	public void insertStudentToDb(Student student) {
-		this.students.put(student.getId(),student);
+		students.put(student.getId(), student);
 	}
 }
