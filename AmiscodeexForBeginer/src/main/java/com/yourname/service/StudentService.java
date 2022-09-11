@@ -15,7 +15,7 @@ import com.yourname.entity.Student;
 public class StudentService {
 
     @Autowired
-    @Qualifier("fakeData")
+    @Qualifier("mongoData")
     private StudentDaoImpl studentDaoImp;
 
 
