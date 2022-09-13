@@ -10,7 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="PatikaSpringFramework" target="1.8" />
+      <module name="PatikaSpringFramework" target="17" />
     </bytecodeTargetLevel>
   </component>
 </project>
