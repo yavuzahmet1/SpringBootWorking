@@ -14,6 +14,7 @@ public class JsfBean {
     private String patika;
 
     public JsfBean(){
+
         patika="Spring Egitimine Hos geldiniz...";
     }
 
