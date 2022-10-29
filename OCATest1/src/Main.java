@@ -3,8 +3,8 @@ public class Main {
 
 	public static void main(String[] args) {
 		question1();
-		// Puma puma = new Puma();
-		// System.out.println(puma.getTailLength());
+		//Puma puma = new Puma();
+		//System.out.println(puma.getTailLength());
 
 	}
 

@@ -1,4 +1,4 @@
-package com.dailycodebuffer.departmentservice;
+package com.dailycodebuffer.department;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
