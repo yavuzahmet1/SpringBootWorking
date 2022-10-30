@@ -15,22 +15,25 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class UserService {
 
-	@Autowired
 	private UserRepositorty userRepositorty;
+	private RestTemplate restTemplate;
 
 	@Autowired
-	private RestTemplate restTemplate;
+	public UserService(UserRepositorty userRepositorty,RestTemplate restTemplate) {
+		this.userRepositorty = userRepositorty;
+		this.restTemplate=restTemplate;
+	}
 
 	public User saveUser(User user) {
 		log.info("Inside saveUser of userService");
-		return userRepositorty.save(user);
+		return this.userRepositorty.save(user);
 	}
 
 	public ResponseTemplateVO getUserWithDepartment(Long userId) {
 		log.info("Inside getUserWithDepartment of userService");
 		ResponseTemplateVO vo = new ResponseTemplateVO();
-		User user = userRepositorty.findByUserId(userId);
-		Department department = restTemplate.getForObject("http://localhost:2300/departments/" + user.getDepartmentId(),
+		User user = this.userRepositorty.findByUserId(userId);
+		Department department = this.restTemplate.getForObject("http://localhost:2300/departments/" + user.getDepartmentId(),
 				Department.class);
 
 		vo.setUser(user);
