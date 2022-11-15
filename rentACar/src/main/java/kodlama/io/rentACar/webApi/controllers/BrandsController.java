@@ -15,29 +15,22 @@ import kodlama.io.rentACar.business.responses.GetAllBrandsResponse;
 @RestController
 @RequestMapping("/api/brands") // adresleme
 public class BrandsController {
-	@Autowired
-	private BrandService brandService;
+    private BrandService brandService;
 
-	//@Autowired // git parametrelerine bak kim bu paramaetreleri implemet ediyorsa onu new'le
-	/*
-	 * public BrandsController(BrandService brandService_) { brandService =
-	 * brandService; }
-	 */
+    @Autowired // git parametrelerine bak kim bu paramaetreleri implemet ediyorsa onu new'le
+    public BrandsController(BrandService brandService) {
+        this.brandService = brandService;
+    }
 
-/*	public BrandsController(BrandService brandService) {
-		//super();
-		this.brandService = brandService;
-	}*/
+    @GetMapping("/getall")
+    public List<GetAllBrandsResponse> getAll() {
+        return this.brandService.getAll();
+    }
 
-	@GetMapping("/getall")
-	public List<GetAllBrandsResponse> getAll() {
-		return this.brandService.getAll();
-	}
+    @PostMapping("/add")
+    public void add(CreateBrandRequest createBrandRequest) {
 
-	@PostMapping("/add")
-	public void add(CreateBrandRequest createBrandRequest) {
-
-		this.brandService.add(createBrandRequest);
-	}
+        this.brandService.add(createBrandRequest);
+    }
 
 }
