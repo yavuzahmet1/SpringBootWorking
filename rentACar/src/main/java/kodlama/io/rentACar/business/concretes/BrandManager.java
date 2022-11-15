@@ -14,13 +14,14 @@ import kodlama.io.rentACar.entities.concretes.Brand;
 
 @Service
 public class BrandManager implements BrandService {
+	@Autowired
 	private BrandRepository brandRepository;
 
-	@Autowired
-	public BrandManager(BrandRepository brandRepository) {
+
+	/*public BrandManager(BrandRepository brandRepository) {
 
 		this.brandRepository = brandRepository;
-	}
+	}*/
 
 	@Override
 	public List<GetAllBrandsResponse> getAll() {// İş kuralları
@@ -40,7 +41,7 @@ public class BrandManager implements BrandService {
 	public void add(CreateBrandRequest createBrandRequest) {
 		Brand brand = new Brand();
 		brand.setName(createBrandRequest.getName());
-		this.brandRepository.save(brand);
+		brandRepository.save(brand);
 	}
 
 }

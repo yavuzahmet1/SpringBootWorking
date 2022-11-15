@@ -15,12 +15,13 @@ import kodlama.io.rentACar.business.responses.GetAllBrandsResponse;
 @RestController
 @RequestMapping("/api/brands") // adresleme
 public class BrandsController {
+    @Autowired
     private BrandService brandService;
 
-    @Autowired // git parametrelerine bak kim bu paramaetreleri implemet ediyorsa onu new'le
+    /*@Autowired // git parametrelerine bak kim bu paramaetreleri implemet ediyorsa onu new'le
     public BrandsController(BrandService brandService) {
         this.brandService = brandService;
-    }
+    }*/
 
     @GetMapping("/getall")
     public List<GetAllBrandsResponse> getAll() {

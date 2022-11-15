@@ -24,7 +24,7 @@ public class EngineerManager implements EngineerService {
     public List<GetAllEngineersResponse> getAll() {
 
         List<Engineer> engineers = engineerRepository.findAll();
-        List<GetAllEngineersResponse> engineersResponses = new ArrayList<>();
+        List<GetAllEngineersResponse> engineersResponses = new ArrayList<GetAllEngineersResponse>();
 
         for (Engineer engineer : engineers) {
 
@@ -33,6 +33,7 @@ public class EngineerManager implements EngineerService {
             engineersResponse.setEngineerId(engineer.getEnginerId());
             engineersResponse.setEngineerName(engineer.getEngineerName());
             engineersResponse.setMobileNo(engineer.getMobileNo());
+            engineersResponses.add(engineersResponse);
         }
         return engineersResponses;
     }
