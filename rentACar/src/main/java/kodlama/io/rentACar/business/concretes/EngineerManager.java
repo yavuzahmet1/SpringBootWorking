@@ -8,6 +8,7 @@ import kodlama.io.rentACar.entities.concretes.Engineer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -21,7 +22,19 @@ public class EngineerManager implements EngineerService {
 
     @Override
     public List<GetAllEngineersResponse> getAll() {
-        return null;
+
+        List<Engineer> engineers = engineerRepository.findAll();
+        List<GetAllEngineersResponse> engineersResponses = new ArrayList<>();
+
+        for (Engineer engineer : engineers) {
+
+            GetAllEngineersResponse engineersResponse = new GetAllEngineersResponse();
+
+            engineersResponse.setEngineerId(engineer.getEnginerId());
+            engineersResponse.setEngineerName(engineer.getEngineerName());
+            engineersResponse.setMobileNo(engineer.getMobileNo());
+        }
+        return engineersResponses;
     }
 
     @Override
