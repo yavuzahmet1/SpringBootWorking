@@ -5,19 +5,17 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "")
-public class Book {
+public class Author {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    //@Column(name = "book_id")
     private Long id;
     private String name;
-    private int pageCount;
-    @ManyToOne
-    private Author author;
+    @OneToMany(mappedBy = "author",fetch = FetchType.LAZY)
+    private List<Book> bookList;
 }

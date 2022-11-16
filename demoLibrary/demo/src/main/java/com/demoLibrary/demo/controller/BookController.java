@@ -20,29 +20,44 @@ public class BookController {
     }
 
     @GetMapping
-    public ResponseEntity<List<Book>> getAll(){
-        List<Book> bookList=bookService.getAll();
-        if (bookList.isEmpty()){
+    public ResponseEntity<List<Book>> getAll() {
+        List<Book> bookList = bookService.getAll();
+        if (bookList.isEmpty()) {
             return ResponseEntity.noContent().build();
         }
         return new ResponseEntity<>(bookList, HttpStatus.OK);
     }
 
     @GetMapping("{id}") //example.com/1 anlamında
-    public ResponseEntity<Book> getById(@PathVariable Long id){//PathVariable
-        Book book=bookService.getById(id);
-        if (Objects.nonNull(book)){
-            return new ResponseEntity<>(book,HttpStatus.OK);
+    public ResponseEntity<Book> getById(@PathVariable Long id) {//PathVariable
+        Book book = bookService.getById(id);
+        if (Objects.nonNull(book)) {
+            return new ResponseEntity<>(book, HttpStatus.OK);
         }
         return ResponseEntity.badRequest().build();
     }
 
     @PostMapping
-    public ResponseEntity<Book> addBook(@RequestBody Book book){
-        Book book1=bookService.add(book);
-        if (Objects.nonNull(book1)){
-            return new ResponseEntity<>(book1,HttpStatus.OK);
+    public ResponseEntity<Book> addBook(@RequestBody Book book) {
+        Book book1 = bookService.add(book);
+        if (Objects.nonNull(book1)) {
+            return new ResponseEntity<>(book1, HttpStatus.OK);
         }
         return ResponseEntity.badRequest().build();
     }
+
+    @PutMapping("{id}")
+    public ResponseEntity<Book> updateBook(@PathVariable Long id, @RequestBody Book book) {
+        Book book1 = bookService.update(book, id);
+        if (Objects.nonNull(book1)) {
+            return new ResponseEntity<>(book1, HttpStatus.OK);
+        }
+        return ResponseEntity.badRequest().build();
+    }
+
+    @DeleteMapping("/{id}")
+    public void deleteBook(@PathVariable Long id) {
+        bookService.delete(id);
+    }
+
 }
