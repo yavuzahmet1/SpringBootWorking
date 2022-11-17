@@ -1,18 +1,20 @@
 package com.demoLibrary.demo.business.abstracts;
 
+import com.demoLibrary.demo.dtos.book.response.BookListResponse;
+import com.demoLibrary.demo.dtos.book.response.BookResponse;
 import com.demoLibrary.demo.entity.Book;
 
 import java.util.List;
 
 public interface BookService {
 
-    List<Book> getAll();
+    List<BookListResponse> getAll();
 
-    Book getById(Long id);
+    BookResponse getById(Long id);
 
-    Book add(Book book);
+    BookResponse add(Book book);
 
-    Book update(Book book, Long id);
+    BookResponse update(Book book, Long id);
 
     void delete(Long id);
 

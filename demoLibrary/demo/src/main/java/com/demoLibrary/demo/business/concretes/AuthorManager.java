@@ -2,6 +2,7 @@ package com.demoLibrary.demo.business.concretes;
 
 import com.demoLibrary.demo.business.abstracts.AuthorService;
 import com.demoLibrary.demo.dataAccess.AuthorRepository;
+import com.demoLibrary.demo.dtos.author.response.AuthorListResponse;
 import com.demoLibrary.demo.entity.Author;
 import org.springframework.stereotype.Service;
 
@@ -50,5 +51,10 @@ public class AuthorManager implements AuthorService {
     public void delete(Long id) {
         authorRepository.deleteById(id);
 
+    }
+    public AuthorListResponse toAuthorListResponse(Author author){
+        AuthorListResponse authorListResponse=new AuthorListResponse();
+        authorListResponse
+        return authorListResponse;
     }
 }

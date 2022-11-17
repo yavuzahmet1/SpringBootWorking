@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Objects;
 
 @RestController
 @RequestMapping("/api/v1/author")
@@ -28,27 +29,33 @@ public class AuthorController {
 
     @GetMapping("/{id}")
     public ResponseEntity<Author> getById(@PathVariable Long id) {
-        Author author1=authorService.getById(id);
-        if (Object.nonNull(author1)){
-            return new ResponseEntity<>(author1,HttpStatus.OK);
+        Author author = authorService.getById(id);
+        if (Objects.nonNull(author)) {
+            return new ResponseEntity<>(author, HttpStatus.OK);
         }
         return ResponseEntity.badRequest().build();
     }
+
     @DeleteMapping("/{id}")
-    public void delete(@PathVariable Long id){
+    public void delete(@PathVariable Long id) {
         authorService.delete(id);
     }
 
     @PostMapping
-    public ResponseEntity<Author>add(@ResponseBody Author author){
-        Author author1=authorService.add(author);
-        if (Object.nonNull(author1)){
-            return new ResponseEntity<>(author1,HttpStatus.OK);
+    public ResponseEntity<Author> add(@RequestBody Author author) {
+        Author author1 = authorService.add(author);
+        if (Objects.nonNull(author1)) {
+            return new ResponseEntity<>(author1, HttpStatus.OK);
         }
         return ResponseEntity.badRequest().build();
     }
-    @PutMapping("{id}/{bookId}")
-    public ResponseEntity<Author> update(@PathVariable Long id,@RequestBody Author author){
-        Author author1=authorService.update()
+
+    @PutMapping("/{id}")
+    public ResponseEntity<Author> update(@PathVariable Long id, @RequestBody Author author) {
+        Author author1 = authorService.update(id, author);
+        if (Objects.nonNull(author1)) {
+            return new ResponseEntity<>(author1, HttpStatus.OK);
+        }
+        return ResponseEntity.badRequest().build();
     }
 }
