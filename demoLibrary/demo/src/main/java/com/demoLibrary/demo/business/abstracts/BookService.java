@@ -1,5 +1,6 @@
 package com.demoLibrary.demo.business.abstracts;
 
+import com.demoLibrary.demo.dtos.book.request.BookRequest;
 import com.demoLibrary.demo.dtos.book.response.BookListResponse;
 import com.demoLibrary.demo.dtos.book.response.BookResponse;
 import com.demoLibrary.demo.entity.Book;
@@ -12,7 +13,7 @@ public interface BookService {
 
     BookResponse getById(Long id);
 
-    BookResponse add(Book book);
+    BookResponse add(BookRequest bookRequest);
 
     BookResponse update(Book book, Long id);
 
