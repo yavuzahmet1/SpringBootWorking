@@ -6,5 +6,5 @@ import lombok.Data;
 public class BookRequest {
     private String name;
     private int pageCount;
-    private String authorId;
+    private Long authorId;
 }

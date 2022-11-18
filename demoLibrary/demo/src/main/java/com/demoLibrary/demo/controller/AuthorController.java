@@ -1,6 +1,9 @@
 package com.demoLibrary.demo.controller;
 
 import com.demoLibrary.demo.business.abstracts.AuthorService;
+import com.demoLibrary.demo.dtos.author.request.AuthorRequest;
+import com.demoLibrary.demo.dtos.author.response.AuthorListResponse;
+import com.demoLibrary.demo.dtos.author.response.AuthorResponse;
 import com.demoLibrary.demo.entity.Author;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -19,19 +22,19 @@ public class AuthorController {
     }
 
     @GetMapping
-    public ResponseEntity<List<Author>> getAll() {
-        List<Author> authorList = authorService.getAll();
-        if (authorList.isEmpty()) {
+    public ResponseEntity<List<AuthorListResponse>> getAll() {
+        List<AuthorListResponse> authorListResponses = authorService.getAll();
+        if (authorListResponses.isEmpty()) {
             ResponseEntity.noContent().build();
         }
-        return new ResponseEntity<>(authorList, HttpStatus.OK);
+        return new ResponseEntity<>(authorListResponses, HttpStatus.OK);
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Author> getById(@PathVariable Long id) {
-        Author author = authorService.getById(id);
-        if (Objects.nonNull(author)) {
-            return new ResponseEntity<>(author, HttpStatus.OK);
+    public ResponseEntity<AuthorResponse> getById(@PathVariable Long id) {
+        AuthorResponse authorResponse = authorService.getById(id);
+        if (Objects.nonNull(authorResponse)) {
+            return new ResponseEntity<>(authorResponse, HttpStatus.OK);
         }
         return ResponseEntity.badRequest().build();
     }
@@ -42,19 +45,19 @@ public class AuthorController {
     }
 
     @PostMapping
-    public ResponseEntity<Author> add(@RequestBody Author author) {
-        Author author1 = authorService.add(author);
-        if (Objects.nonNull(author1)) {
-            return new ResponseEntity<>(author1, HttpStatus.OK);
+    public ResponseEntity<AuthorResponse> add(@RequestBody AuthorRequest authorRequest) {
+        AuthorResponse authorResponse = authorService.add(authorRequest);
+        if (Objects.nonNull(authorResponse)) {
+            return new ResponseEntity<>(authorResponse, HttpStatus.OK);
         }
         return ResponseEntity.badRequest().build();
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Author> update(@PathVariable Long id, @RequestBody Author author) {
-        Author author1 = authorService.update(id, author);
-        if (Objects.nonNull(author1)) {
-            return new ResponseEntity<>(author1, HttpStatus.OK);
+    public ResponseEntity<AuthorResponse> update(@PathVariable Long id, @RequestBody Author author) {
+        AuthorResponse authorResponse = authorService.update(id, author);
+        if (Objects.nonNull(authorResponse)) {
+            return new ResponseEntity<>(authorResponse, HttpStatus.OK);
         }
         return ResponseEntity.badRequest().build();
     }
