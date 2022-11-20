@@ -1,4 +1,4 @@
-package org.javaStream;
+package org.javaStream.stream;
 
 import java.util.HashSet;
 import java.util.List;
