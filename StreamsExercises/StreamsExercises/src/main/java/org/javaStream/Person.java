@@ -23,8 +23,9 @@ class Person {
     public int getAge() {
         return age;
     }
-        public String getNationality() {
-            return nationality;
-        }
+
+    public String getNationality() {
+        return nationality;
     }
+}
 
