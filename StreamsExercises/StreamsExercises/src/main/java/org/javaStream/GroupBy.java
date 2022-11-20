@@ -28,5 +28,6 @@ public class GroupBy {
 
         /*return people.stream()
                 .collect(Collectors.groupingBy(person -> person.getNationality(),Collectors.toList())*/
+
     }
 }

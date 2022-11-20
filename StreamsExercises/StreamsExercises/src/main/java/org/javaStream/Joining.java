@@ -27,4 +27,10 @@ public class Joining {
                 .reduce((i,sum)->i+", "+sum)
                 .orElse("")+".";
     }
+    public static String namesToString3(List<Person> people) {
+        return "Names: "+people.stream()
+                .map(Person::getName)
+                .reduce((i,sum)->i+", "+sum)
+                .orElse("")+".";
+    }
 }
