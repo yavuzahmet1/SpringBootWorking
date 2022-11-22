@@ -45,7 +45,7 @@ public class AuthorController {
     }
 
     @PostMapping
-    public ResponseEntity<AuthorResponse> add(@RequestBody AuthorRequest authorRequest) {
+    public ResponseEntity<AuthorResponse> add(@RequestBody AuthorRequest authorRequest) throws Exception {
         AuthorResponse authorResponse = authorService.add(authorRequest);
         if (Objects.nonNull(authorResponse)) {
             return new ResponseEntity<>(authorResponse, HttpStatus.OK);
