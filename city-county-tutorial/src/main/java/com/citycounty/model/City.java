@@ -16,6 +16,6 @@ public class City {
     @Id
     private String  id;
     private String name;
-    private Date createDate;
+    private Date createDate=new Date();
 
 }

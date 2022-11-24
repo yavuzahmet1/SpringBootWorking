@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 
 import static org.springframework.http.HttpStatus.CREATED;
 import static org.springframework.http.HttpStatus.OK;
@@ -32,7 +33,7 @@ public class CityController {
 
     @GetMapping
     public ResponseEntity<List<City>> getAll() {
-        return null;
+        return new ResponseEntity<>(cityService.getAll(),OK);
     }
 
     @GetMapping("/{id}")
@@ -57,16 +58,12 @@ public class CityController {
 
     @DeleteMapping("{id}")
     public ResponseEntity<Void> deleteCity(@PathVariable String id) {
-        City city = getCityById(id);
-        cities.remove(city);
+        cityService.deleteCity(id);
         return new ResponseEntity<>(OK);
     }
 
     private City getCityById(String id) {
-        return cities.stream()
-                .filter(city -> city.getId().equals(id))
-                .findFirst()
-                .orElseThrow(() -> new RuntimeException("City is not found"));
+        return cityService.getCityById(id);
     }
 
 }
