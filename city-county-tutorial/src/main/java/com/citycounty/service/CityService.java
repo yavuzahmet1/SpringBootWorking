@@ -16,16 +16,30 @@ public class CityService {
     public List<City> getAll() {
         return cityRepository.findAll();
     }
-    public City createCity(City city) {
+
+    public City createCity(City city){
+
+        Optional<City> cityByName = cityRepository.findByName(city.getName());
+        if (cityByName.isPresent()) {
+            System.out.println("Il already exists with name: " + city.getName());
+        }
+
         return cityRepository.save(city);
     }
 
-    public void deleteCity(String id) {
-        cityRepository.deleteById(id);
-    }
 
-    public City getCityById(String id) {
-        return cityRepository.findById(id)
-                .orElseThrow(()->new RuntimeException("City is not found"));
+        public void deleteCity (String id){
+            cityRepository.deleteById(id);
+        }
+
+        public City getCityById (String id){
+            return cityRepository.findById(id)
+                    .orElseThrow(() -> new RuntimeException("City is not found"));
+        }
+
+        public void update (String id, City city){
+            City oldCity = getCityById(id);
+            oldCity.setName(city.getName());
+            cityRepository.save(oldCity);
+        }
     }
-}

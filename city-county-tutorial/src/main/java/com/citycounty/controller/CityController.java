@@ -20,17 +20,6 @@ public class CityController {
 
     private final CityService cityService;
 
-    /*private static final List<City> cities = new ArrayList<>();
-
-    public CityController() {
-        if (cities.isEmpty()) {
-            City city = new City("51", "Nigde", new Date());
-            City city1 = new City("34", "Istanbul", new Date());
-            cities.add(city);
-            cities.add(city1);
-        }
-    }*/
-
     @GetMapping
     public ResponseEntity<List<City>> getAll() {
         return new ResponseEntity<>(cityService.getAll(),OK);
@@ -43,16 +32,14 @@ public class CityController {
     }
 
     @PostMapping
-    public ResponseEntity<City> createCity(@RequestBody City city) {
+    public ResponseEntity<City> createCity(@RequestBody City city)  {
 
         return new ResponseEntity<>(cityService.createCity(city), CREATED);
     }
 
     @PutMapping("/{id}")
     public ResponseEntity<Void> changeCity(@PathVariable String id, @RequestBody City city) {
-        City oldCity = getCityById(id);
-        oldCity.setName(city.getName());
-        oldCity.setCreateDate(new Date());
+        cityService.update(id,city);
         return new ResponseEntity<>(OK);
     }
 
