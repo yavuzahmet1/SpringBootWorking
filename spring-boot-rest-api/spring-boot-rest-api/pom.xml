@@ -8,11 +8,11 @@
 		<version>3.0.0</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.city-county</groupId>
-	<artifactId>city-county-tutorial</artifactId>
+	<groupId>com.trial.spring</groupId>
+	<artifactId>spring-boot-rest-api</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>city-county-tutorial</name>
-	<description>city project for Spring Boot</description>
+	<name>spring-boot-rest-api</name>
+	<description>Rest api project for Spring Boot</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>
@@ -47,12 +47,6 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-actuator -->
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-actuator</artifactId>
-		</dependency>
-
 	</dependencies>
 
 	<build>

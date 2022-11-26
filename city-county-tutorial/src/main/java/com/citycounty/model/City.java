@@ -16,7 +16,7 @@ import java.util.Date;
 @NoArgsConstructor
 public class City {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+
     private String  id;
     private String name;
     private Date createDate=new Date();
