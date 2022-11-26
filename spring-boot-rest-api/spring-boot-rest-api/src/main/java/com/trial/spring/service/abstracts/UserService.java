@@ -1,18 +1,22 @@
 package com.trial.spring.service.abstracts;
 
+import com.trial.spring.dto.UserDto;
 import com.trial.spring.entity.User;
+import org.springframework.data.domain.Page;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 import java.util.Optional;
 
 public interface UserService {
-    User createUser(User user);
+    UserDto createUser(UserDto userDto);
 
-    List<User> getAll();
+    List<UserDto> getAll();
 
-    User getUser(Long id);
+    UserDto getUser(Long id);
 
-    User updateUser(Long id, User user);
+    UserDto updateUser(Long id, UserDto userDto);
 
     Boolean deleteUser(Long id);
+    Page<User> pagination(int currentPage,int pageSize);
 }
