@@ -1,5 +1,6 @@
 package com.trial.spring.service.concretes;
 
+import com.trial.spring.advice.UserNotFound;
 import com.trial.spring.dto.UserDto;
 import com.trial.spring.entity.User;
 import com.trial.spring.repository.UserRepository;
@@ -48,7 +49,7 @@ public class UserManager implements UserService {
         if (user.isPresent()) {
             return modelMapper.map(user.get(), UserDto.class);
         }
-        return null;
+        throw new RuntimeException("User is not found !!!");
     }
 
     @Override
@@ -62,7 +63,7 @@ public class UserManager implements UserService {
 
             return modelMapper.map(userRepository.save(resultUser.get()), UserDto.class);
         }
-        return null;
+       return null;//throw new IllegalArgumentException("User is not found !!!");
     }
 
     @Override
