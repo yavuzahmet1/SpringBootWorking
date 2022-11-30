@@ -19,6 +19,7 @@ public class Book extends BaseEntity {
     private BookStatus bookStatus;
     private String publisher;
     private Integer lastPageNumber;
+    private Integer totalPage;
 
     @OneToOne
     private Image image;
@@ -26,4 +27,5 @@ public class Book extends BaseEntity {
     @ManyToOne
     @JoinColumn(name = "category_id")
     private Category category;
+    private Long userId;
 }

@@ -3,6 +3,7 @@ package com.backend.library.entity;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 
@@ -11,6 +12,7 @@ import java.util.List;
 
 @Entity
 @SuperBuilder
+@Getter
 @NoArgsConstructor
 @Table(name = "category")
 public class Category extends BaseEntity {
