@@ -2,10 +2,14 @@ package com.backend.library.dto;
 
 import com.backend.library.entity.BookStatus;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
 
 import java.io.File;
 
 @Data
+@SuperBuilder
+@NoArgsConstructor
 public class BookResponse {
     private String title;
     private String authorName;
@@ -15,4 +19,5 @@ public class BookResponse {
     private Integer totalPage;
     private File image;
     private Long categoryId;
+    private String imageUrl;
 }
