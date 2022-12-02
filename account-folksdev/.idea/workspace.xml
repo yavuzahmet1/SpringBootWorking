@@ -4,11 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d0abfc0a-638b-4a96-b51e-5727e1c310e3" name="Changes" comment="" />
+    <list default="true" id="d0abfc0a-638b-4a96-b51e-5727e1c310e3" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/kotlinc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jetbrains_kotlin_kotlin_runtime_1_2_71.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/account/src/main/java/com/folksdev/account/model/Account.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jetbrains_kotlin_kotlin_reflect_1_7_22.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jetbrains_kotlin_kotlin_reflect_1_6_21.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/account/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/account/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/account/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/account/src/main/resources/application.properties" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Kotlin Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -24,6 +40,9 @@
         <entry key="com.haulmont.jpb.jpaStructure" value="true" />
       </map>
     </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -45,12 +64,14 @@
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/JavaForBeginner/account-folksdev",
+    "last_opened_file_path": "C:/Users/1yavu/Downloads/login-registration-backend-master",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)"
+    "node.js.selected.package.tslint": "(autodetect)",
+    "spring.configuration.checksum": "e268443e43d93dab7ebef303bbe9642f"
   }
 }]]></component>
   <component name="RunManager">
@@ -70,7 +91,9 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1669892806624</updated>
-      <workItem from="1669892807865" duration="693000" />
+      <workItem from="1669892807865" duration="977000" />
+      <workItem from="1669932222775" duration="3385000" />
+      <workItem from="1669937555728" duration="74000" />
     </task>
     <servers />
   </component>
