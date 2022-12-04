@@ -24,13 +24,21 @@ public class EmployeeController {
     public ResponseEntity<List<Employee>> getAll() {
         return new ResponseEntity<>(employeeService.getAll(), HttpStatus.OK);
     }
-    @GetMapping
-    public ResponseEntity<Employee> getById(Long id){
-        return new ResponseEntity<>(employeeService.getById(id));
+
+    @GetMapping("{id}")
+    public ResponseEntity<Employee> getById(@PathVariable Long id) {
+        return new ResponseEntity<>(employeeService.getById(id), HttpStatus.OK);
     }
-    @DeleteMapping("/{id}")
-    public void delete(@RequestParam Long id){
+
+    @PutMapping("{id}")
+    public ResponseEntity<Employee> update(@PathVariable("id") Long id, @RequestBody Employee employee) {
+        return new ResponseEntity<>(employeeService.update(id, employee), HttpStatus.OK);
+    }
+
+    @DeleteMapping("{id}")
+    public ResponseEntity<String> delete(@PathVariable Long id) {
         employeeService.delete(id);
+        return new ResponseEntity<>("Employee deleted successfully!.",HttpStatus.OK);
     }
 }
 //1.02.00
