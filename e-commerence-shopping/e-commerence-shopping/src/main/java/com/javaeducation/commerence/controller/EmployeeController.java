@@ -41,5 +41,3 @@ public class EmployeeController {
         return new ResponseEntity<>("Employee deleted successfully!.",HttpStatus.OK);
     }
 }
-//1.02.00
-//https://www.youtube.com/watch?v=4Ico2HjRTCE
