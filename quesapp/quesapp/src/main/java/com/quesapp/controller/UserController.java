@@ -1,49 +1,40 @@
 package com.quesapp.controller;
 
 import com.quesapp.entities.User;
-import com.quesapp.repository.UserRepository;
+import com.quesapp.service.abstracts.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/users")
 @RequiredArgsConstructor
 public class UserController {
-    private final UserRepository userRepository;
+    private final UserService userService;
 
     @GetMapping
     public List<User> getAll() {
-        return userRepository.findAll();
+        return userService.getAll();
     }
 
     @PostMapping
     public User createUser(@RequestBody User newUser) {
-        return userRepository.save(newUser);
+        return userService.saveUser(newUser);
     }
 
     @GetMapping("/{id}")
     public User getById(@PathVariable Long id) {
-        return userRepository.findById(id).orElse(null);
+        return userService.getByUser(id);
     }
 
     @PutMapping("/{id}")
     public User updateUser(@PathVariable Long id, @RequestBody User newUser) {
-        Optional<User> user = userRepository.findById(id);
-        if (user.isPresent()) {
-            User foundUser = user.get();
-            foundUser.setUserName(newUser.getUserName());
-            foundUser.setPassword(newUser.getPassword());
-            userRepository.save(foundUser);
-            return foundUser;
-        } else
-            return null;
+        return userService.updateUser(id, newUser);
     }
 
     @DeleteMapping("/{id}")
     public void deleteUser(@PathVariable Long id) {
-        userRepository.deleteById(id);
+        userService.deleteById(id);
     }
 }
