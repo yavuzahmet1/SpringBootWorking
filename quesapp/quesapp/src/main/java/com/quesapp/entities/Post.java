@@ -13,7 +13,7 @@ import javax.persistence.*;
 public class Post {
     @Id
     private Long id;
-    //private long userId;
+
     @ManyToOne(fetch = FetchType.LAZY)//User objesini databaseden hemen çekme post objesini çektiğimde ilgili useri bana getirmene gerek yok diyorum.
     //fetch = FetchType.EAGER yazsaydım ilgili objeyi direk getirecekti
     //Birçok postun bir useri vardır
@@ -21,7 +21,9 @@ public class Post {
     @OnDelete(action = OnDeleteAction.CASCADE)//Bir user silindiğinde onun tüm postları silinsin istiyoruz
     @JsonIgnore//serizilasion da bana sıkıntı çıkmasın
     private User user;
+
     private String title;
+
     @Lob
     @Column(columnDefinition = "text")
     private String text;

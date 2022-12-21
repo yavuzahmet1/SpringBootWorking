@@ -17,18 +17,19 @@ import javax.persistence.*;
 public class Comment {
     @Id
     private long id;
-    //private long postId;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "post_id", nullable = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
     @JsonIgnore
     private Post post;
-    // long userId;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", nullable = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
     @JsonIgnore
     private User user;
+
     @Lob
     @Column(columnDefinition = "text")
     private String text;
