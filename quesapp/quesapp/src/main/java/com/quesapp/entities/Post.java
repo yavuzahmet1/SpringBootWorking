@@ -12,6 +12,7 @@ import javax.persistence.*;
 @Data
 public class Post {
     @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY)//User objesini databaseden hemen çekme post objesini çektiğimde ilgili useri bana getirmene gerek yok diyorum.
@@ -24,7 +25,6 @@ public class Post {
 
     private String title;
 
-    @Lob
     @Column(columnDefinition = "text")
     private String text;
 }

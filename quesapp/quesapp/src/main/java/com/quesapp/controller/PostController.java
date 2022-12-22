@@ -1,10 +1,9 @@
 package com.quesapp.controller;
 
 import com.quesapp.dto.request.PostCreateRequest;
+import com.quesapp.dto.request.PostUpdateRequest;
 import com.quesapp.entities.Post;
-import com.quesapp.entities.User;
 import com.quesapp.service.abstracts.PostService;
-import com.quesapp.service.abstracts.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -22,12 +21,20 @@ public class PostController {
         return postService.getAllPosts(userId);
     }
     @GetMapping("/{postId}")
-    public Post getOnePost(@PathVariable Long postId){
-        return postService.getOnePostId(postId);
+    public Post getOnePostById(@PathVariable Long postId){
+        return postService.getOnePostById(postId);
     }
     @PostMapping
     public Post createOnePost(@RequestBody PostCreateRequest newPostRequest){
 
         return postService.createOnePost(newPostRequest);
+    }
+    @PutMapping("/{postId}")
+    public Post updateOnePost(@PathVariable Long postId,@RequestBody PostUpdateRequest updatePost){
+        return  postService.updateOnePostById(postId,updatePost);
+    }
+    @DeleteMapping
+    public void deleteOnePost(Long postId){
+        postService.deletePostById(postId);
     }
 }
