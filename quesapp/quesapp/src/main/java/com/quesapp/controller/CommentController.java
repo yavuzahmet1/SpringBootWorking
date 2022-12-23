@@ -1,6 +1,7 @@
 package com.quesapp.controller;
 
 import com.quesapp.dto.request.CommentCreateRequest;
+import com.quesapp.dto.request.CommentUpdateRequest;
 import com.quesapp.entities.Comment;
 import com.quesapp.service.abstracts.CommentService;
 import lombok.RequiredArgsConstructor;
@@ -31,5 +32,14 @@ public class CommentController {
     @PostMapping
     public Comment createOneComment(@RequestBody CommentCreateRequest commentRequest) {
         return commentService.createOneComment(commentRequest);
+    }
+
+    @PutMapping("/commentId")
+    public Comment updateOneComment(@PathVariable Long commentId, @RequestBody CommentUpdateRequest commentUpdateRequest) {
+        return commentService.updateOneCommentById(commentId,commentUpdateRequest);
+    }
+    @DeleteMapping
+    public void  deleteOneComment(@PathVariable Long commentId){
+        commentService.deleteOneCommentById(commentId);
     }
 }

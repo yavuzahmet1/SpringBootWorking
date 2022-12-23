@@ -1,7 +1,10 @@
 package com.quesapp.service.concretes;
 
 import com.quesapp.dto.request.CommentCreateRequest;
+import com.quesapp.dto.request.CommentUpdateRequest;
 import com.quesapp.entities.Comment;
+import com.quesapp.entities.Post;
+import com.quesapp.entities.User;
 import com.quesapp.repository.CommentRepository;
 import com.quesapp.service.abstracts.CommentService;
 import com.quesapp.service.abstracts.PostService;
@@ -39,6 +42,33 @@ public class CommentManager implements CommentService {
 
     @Override
     public Comment createOneComment(CommentCreateRequest commentRequest) {
-        return null;
+        User user = userService.getOneUserById(commentRequest.getUserId());
+        Post post = postService.getOnePostById(commentRequest.getPostId());
+        if (user != null && post != null) {
+            Comment commentToSave = new Comment();
+            commentToSave.setId(commentRequest.getId());
+            commentToSave.setPost(post);
+            commentToSave.setUser(user);
+            commentToSave.setText(commentRequest.getText());
+            return commentRepository.save(commentToSave);
+        } else
+            return null;
     }
+
+    @Override
+    public Comment updateOneCommentById(Long commentId, CommentUpdateRequest commentUpdateRequest) {
+        Optional<Comment> comment = commentRepository.findById(commentId);
+        if (comment.isPresent()) {
+            Comment commentToUpdate = comment.get();
+            commentToUpdate.setText(commentUpdateRequest.getText());
+            return commentRepository.save(commentToUpdate);
+        } else
+            return null;
+    }
+
+    @Override
+    public void deleteOneCommentById(Long commentId) {
+        commentRepository.deleteById(commentId);
+    }
+
 }

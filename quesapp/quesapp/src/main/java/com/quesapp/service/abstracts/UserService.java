@@ -9,7 +9,7 @@ public interface UserService {
 
     User saveUser(User newUser);
 
-    User getByUser(Long id);
+    User getOneUserById(Long id);
 
     User updateUser(Long id, User newUser);
 

@@ -34,7 +34,7 @@ public class PostManager implements PostService {
 
     @Override
     public Post createOnePost(PostCreateRequest newPostRequest) {
-        User user = userManager.getByUser(newPostRequest.getUserId());
+        User user = userManager.getOneUserById(newPostRequest.getUserId());
         if (user == null) {
             return null;
         }
