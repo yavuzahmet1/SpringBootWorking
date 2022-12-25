@@ -3,21 +3,21 @@ import ReactDOM from "react-dom";
 
 function Post(){
     const[error,setError]=useState(null);
-    const[isLoaded,setLoaded]=useState(false);
+    const[isLoaded,setIsLoaded]=useState(false);
     const[postList,setPostList]=useState([]);
 
     useEffect(()=>{
         fetch("/posts")
-        .then(res=>res.json)
+        .then(res=>res.json())
         .then(
             (result)=>{
                 setIsLoaded(true);
                 setPostList(result);
             },
             (error)=>{
+                console.log(error)
                 setIsLoaded(true);
                 setError(error);
-
             }
         )
     },[])
