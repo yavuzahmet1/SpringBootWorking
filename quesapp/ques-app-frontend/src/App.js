@@ -1,17 +1,21 @@
-import logo from './logo.svg';
+//import logo from './logo.svg';
 import './App.css';
-import {BrowserRouter, Switch, Route} from 'react-router-dom';
+import {BrowserRouter, Routes, Route} from 'react-router-dom';
+import Navbar from './components/Navbar/Navbar';
+import Home from './components/Home/Home';
+import User from './components/User/User';
 
 function App() {
   return (
     <div className="App">
-      <BrowserRouter>
-      <Switch>
-        <Route exact path='/' component={Home}></Route>
-        <Route exact route="/users"
-      </Switch>
+       <BrowserRouter>
+        <Navbar></Navbar>
+        <Routes>
+        <Route path="/" element={Home} />  
+        <Route path="/users/:userId" element={User} />
+        </Routes>
       </BrowserRouter>
-
+      
     </div>
   );
 }
