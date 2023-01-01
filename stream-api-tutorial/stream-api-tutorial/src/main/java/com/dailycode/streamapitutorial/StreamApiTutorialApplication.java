@@ -33,13 +33,13 @@ public class StreamApiTutorialApplication {
         //collect
         Set<Employee> increasedSalSet =
                 employees.stream()
-                .map(employee -> new Employee(
-                        employee.getFirstName(),
-                        employee.getLastName(),
-                        employee.getSalary() * 1.10,
-                        employee.getProjects()
-                ))
-                .collect(Collectors.toSet());
+                        .map(employee -> new Employee(
+                                employee.getFirstName(),
+                                employee.getLastName(),
+                                employee.getSalary() * 1.10,
+                                employee.getProjects()
+                        ))
+                        .collect(Collectors.toSet());
         System.out.println(increasedSalSet);
         List<Employee> increasedSalList =
                 employees.stream()
@@ -54,6 +54,39 @@ public class StreamApiTutorialApplication {
         System.out.println(increasedSalList);
 
         //filter
+        //findFirst
+        List<Employee> filterEmployee =
+                employees.stream()
+                        .filter(employee -> employee.getSalary()  <3000.0)
+                        .map(employee -> new Employee(
+                                employee.getFirstName(),
+                                employee.getLastName(),
+                                employee.getSalary() * 1.10,
+                                employee.getProjects()
+                        ))
+                        .collect(Collectors.toList());
+        System.out.println(filterEmployee);
+
+        Employee findFirstEmployee =
+                employees.stream()
+                        .filter(employee -> employee.getSalary() < 2000.0)
+                        .map(employee -> new Employee(
+                                employee.getFirstName(),
+                                employee.getLastName(),
+                                employee.getSalary() * 1.10,
+                                employee.getProjects()
+                        ))
+                        .findFirst()
+                        .orElse(null);
+        System.out.println(findFirstEmployee);
+
+        //flatMap
+        String projects=
+                employees.stream()
+                .map(employee -> employee.getProjects())
+                .flatMap(strings -> strings.stream())
+                .collect(Collectors.joining(","));
+        System.out.println(projects);
 
     }
 
