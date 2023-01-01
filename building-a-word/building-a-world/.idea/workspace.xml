@@ -5,13 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0ba2eb3f-6e6c-4e6b-922b-de187da86838" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/world/controller/WorldController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/wordlist.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/world/service/UsersGameService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/world/service/UsersGameService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/world/service/WordsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/world/service/WordsService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../worlds-building/worlds-building/src/main/java/worldsbuilding/model/Game.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../worlds-building/worlds-building/src/main/java/worldsbuilding/service/UsersGameService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../worlds-building/worlds-building/src/main/java/worldsbuilding/service/WorldsService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,21 +35,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/JavaForBeginner/worlds-building/worlds-building/pom.xml",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "spring.configuration.checksum": "ead452eedf0122068d8c8beca6baded1"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/JavaForBeginner/worlds-building/worlds-building/pom.xml&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;ead452eedf0122068d8c8beca6baded1&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\JavaForBeginner\building-a-word\building-a-world\src\main\resources" />
@@ -70,6 +66,7 @@
       <workItem from="1672480107638" duration="2187000" />
       <workItem from="1672486087838" duration="1286000" />
       <workItem from="1672495248065" duration="1430000" />
+      <workItem from="1672497035066" duration="14000" />
     </task>
     <servers />
   </component>
