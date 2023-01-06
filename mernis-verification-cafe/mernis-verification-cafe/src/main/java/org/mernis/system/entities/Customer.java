@@ -1,13 +1,11 @@
 package org.mernis.system.entities;
 
-import java.util.Date;
-
 public class Customer {
     int id;
     String name;
     String lastName;
     int dateOfBirth;
-    String nationalityId;
+    Long nationalityId;
 
     public Customer(int id, String name, String lastName, int dateOfBirth, String nationalityId) {
         this.id = id;
@@ -49,11 +47,11 @@ public class Customer {
         this.dateOfBirth = dateOfBirth;
     }
 
-    public String getNationalityId() {
+    public Long getNationalityId() {
         return nationalityId;
     }
 
-    public void setNationalityId(String nationalityId) {
+    public void setNationalityId(Long nationalityId) {
         this.nationalityId = nationalityId;
     }
 }

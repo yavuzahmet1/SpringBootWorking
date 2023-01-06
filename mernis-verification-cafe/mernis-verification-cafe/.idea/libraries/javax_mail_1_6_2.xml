@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="javax.mail-1.6.2">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/Desktop/javax.mail-1.6.2.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/ksoap2-android-assembly-2.4-jar-with-dependencies.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/ksoap2-android-assembly-3.6.4-jar-with-dependencies.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

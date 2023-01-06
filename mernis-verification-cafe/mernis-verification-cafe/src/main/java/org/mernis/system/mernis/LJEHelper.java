@@ -9,10 +9,13 @@ package org.mernis.system.mernis;
 //
 //----------------------------------------------------
 
-import java.util.*;
 import org.ksoap2.serialization.*;
 import org.kxml2.kdom.Element;
 import org.kxml2.kdom.Node;
+
+import java.util.ArrayList;
+import java.util.Hashtable;
+import java.util.UUID;
 
 
 public class LJEHelper
