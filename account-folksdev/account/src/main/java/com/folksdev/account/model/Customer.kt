@@ -1,19 +1,24 @@
 package com.folksdev.account.model
 
-import org.hibernate.annotations.GenericGenerator
-import javax.persistence.FetchType
-import javax.persistence.GeneratedValue
-import javax.persistence.Id
-import javax.persistence.OneToMany
 
+import jakarta.persistence.FetchType
+import jakarta.persistence.Entity
+import jakarta.persistence.GeneratedValue
+import jakarta.persistence.Id
+import jakarta.persistence.OneToMany
+import org.hibernate.annotations.GenericGenerator
+
+
+@Entity
 data class Customer(
     @Id
     @GeneratedValue(generator = "UUID")
     @GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
     val id: String?,
+
     val name:String?,
     val lastName:String?,
 
-    @OneToMany(mappedBy = "customer", fetch = FetchType.LAZY)
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "customer" )
     val accounts:Set<Account>?
 )

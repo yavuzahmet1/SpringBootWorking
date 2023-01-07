@@ -2,10 +2,10 @@ package com.folksdev.account.model
 
 
 
+import jakarta.persistence.*
 import org.hibernate.annotations.GenericGenerator
 import java.math.BigDecimal
 import java.time.LocalDateTime
-import javax.persistence.*
 
 @Entity
 data class Account(
@@ -16,12 +16,12 @@ data class Account(
     val balance: BigDecimal? = BigDecimal.ZERO,
     val creationDate: LocalDateTime?,
 
-    @OneToMany(fetch = FetchType.LAZY, cascade = [CascadeType.ALL])
+    @ManyToOne(fetch = FetchType.LAZY, cascade = [CascadeType.ALL])
     @JoinColumn(name = "customer_id", nullable = false)
     val customer: Customer?,
 
-   /* @OneToMany(mappedBy = "account", fetch = FetchType.LAZY)
-    val transaction:Set<Transaction>?*/
+    @OneToMany(mappedBy = "account", fetch = FetchType.LAZY)
+    val transaction: Set<Transaction>?
 
     ){
 
