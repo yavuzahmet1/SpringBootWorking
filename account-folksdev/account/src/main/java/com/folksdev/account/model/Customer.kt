@@ -16,9 +16,9 @@ data class Customer(
     @GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
     val id: String?,
 
-    val name:String?,
-    val lastName:String?,
+    val name: String?,
+    val lastName: String?,
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "customer" )
-    val accounts:Set<Account>?
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "customer")
+    val accounts: Set<Account>?
 )

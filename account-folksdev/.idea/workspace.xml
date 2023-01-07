@@ -5,9 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d0abfc0a-638b-4a96-b51e-5727e1c310e3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/account/src/main/java/com/folksdev/account/repository/AccountRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/account/src/main/java/com/folksdev/account/dto/AccountCustomerDto.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/account/src/main/java/com/folksdev/account/dto/AccountDto.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/account/src/main/java/com/folksdev/account/dto/AccountDtoConverter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/account/src/main/java/com/folksdev/account/dto/CustomerAccountDto.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/account/src/main/java/com/folksdev/account/dto/CustomerDto.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/account/src/main/java/com/folksdev/account/dto/TransactionDto.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/account/src/main/java/com/folksdev/account/repository/CustomerRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/account/src/main/java/com/folksdev/account/repository/TransactionRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/account/src/main/java/com/folksdev/account/model/Account.kt" beforeDir="false" afterPath="$PROJECT_DIR$/account/src/main/java/com/folksdev/account/model/Account.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/account/src/main/java/com/folksdev/account/model/Customer.kt" beforeDir="false" afterPath="$PROJECT_DIR$/account/src/main/java/com/folksdev/account/model/Customer.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/account/src/main/java/com/folksdev/account/model/Transaction.kt" beforeDir="false" afterPath="$PROJECT_DIR$/account/src/main/java/com/folksdev/account/model/Transaction.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -19,8 +27,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Kotlin Class" />
-        <option value="Kotlin Data Class" />
         <option value="Interface" />
+        <option value="Kotlin Data Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -96,7 +105,7 @@
       <workItem from="1673116721189" duration="3268000" />
       <workItem from="1673120021969" duration="2008000" />
       <workItem from="1673123463208" duration="1620000" />
-      <workItem from="1673125117163" duration="1715000" />
+      <workItem from="1673125117163" duration="4214000" />
     </task>
     <servers />
   </component>

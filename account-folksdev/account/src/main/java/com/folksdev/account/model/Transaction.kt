@@ -16,9 +16,9 @@ data class Transaction(
     @GeneratedValue(generator = "UUID")
     @GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
     val id: String?,
-    val transactionType: TransactionType?=TransactionType.INITIAL,
+    val transactionType: TransactionType? = TransactionType.INITIAL,
     val amount: BigDecimal?,
-    val transactionDate:LocalDateTime?,
+    val transactionDate: LocalDateTime?,
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false, cascade = [CascadeType.ALL])
     @JoinColumn(name="account_id", nullable = false)

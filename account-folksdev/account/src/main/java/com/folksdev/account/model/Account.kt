@@ -1,7 +1,6 @@
 package com.folksdev.account.model
 
 
-
 import jakarta.persistence.*
 import org.hibernate.annotations.GenericGenerator
 import java.math.BigDecimal
@@ -23,7 +22,7 @@ data class Account(
     @OneToMany(mappedBy = "account", fetch = FetchType.LAZY)
     val transaction: Set<Transaction>?
 
-    ){
+) {
 
     override fun equals(other: Any?): Boolean {
         if (this === other) return true
