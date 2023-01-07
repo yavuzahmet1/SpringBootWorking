@@ -5,7 +5,7 @@ public class Customer {
     String name;
     String lastName;
     int dateOfBirth;
-    Long nationalityId;
+    String nationalityId;
 
     public Customer(int id, String name, String lastName, int dateOfBirth, String nationalityId) {
         this.id = id;
@@ -51,7 +51,7 @@ public class Customer {
         return nationalityId;
     }
 
-    public void setNationalityId(Long nationalityId) {
+    public void setNationalityId(String nationalityId) {
         this.nationalityId = nationalityId;
     }
 }
