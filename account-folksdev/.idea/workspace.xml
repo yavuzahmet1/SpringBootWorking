@@ -5,12 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d0abfc0a-638b-4a96-b51e-5727e1c310e3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/account/src/main/java/com/folksdev/account/dto/CreateAccountRequest.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/account/src/main/java/com/folksdev/account/exception/CustomerNotFoundException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/account/src/main/java/com/folksdev/account/service/AccountService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/account/src/main/java/com/folksdev/account/service/CustomerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/account/src/main/java/com/folksdev/account/service/TransactionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/account/src/main/java/com/folksdev/account/model/Account.kt" beforeDir="false" afterPath="$PROJECT_DIR$/account/src/main/java/com/folksdev/account/model/Account.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/account/src/main/java/com/folksdev/account/model/Transaction.kt" beforeDir="false" afterPath="$PROJECT_DIR$/account/src/main/java/com/folksdev/account/model/Transaction.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/account/src/main/java/com/folksdev/account/service/AccountService.java" beforeDir="false" afterPath="$PROJECT_DIR$/account/src/main/java/com/folksdev/account/service/AccountService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,8 +22,8 @@
       <list>
         <option value="Kotlin Class" />
         <option value="Interface" />
-        <option value="Class" />
         <option value="Kotlin Data Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -101,6 +101,7 @@
       <workItem from="1673123463208" duration="1620000" />
       <workItem from="1673125117163" duration="4214000" />
       <workItem from="1673257094624" duration="5439000" />
+      <workItem from="1673338967467" duration="2296000" />
     </task>
     <servers />
   </component>

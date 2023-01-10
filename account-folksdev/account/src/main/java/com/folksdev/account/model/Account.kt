@@ -23,8 +23,8 @@ data class Account(
     val transaction: Set<Transaction>? = HashSet()
 
 ) {
-    constructor(customer: Customer, balance: BigDecimal, creationDate: LocalDateTime) : this(
-         ,
+    constructor(customer: Customer, balance: BigDecimal, creationDate: LocalDateTime) : this (
+         "",
         customer = customer,
         balance = balance,
         creationDate = creationDate
