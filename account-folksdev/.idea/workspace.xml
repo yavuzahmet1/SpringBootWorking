@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d0abfc0a-638b-4a96-b51e-5727e1c310e3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/account/src/main/java/com/folksdev/account/service/TransactionService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account/src/main/java/com/folksdev/account/model/Account.kt" beforeDir="false" afterPath="$PROJECT_DIR$/account/src/main/java/com/folksdev/account/model/Account.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account/src/main/java/com/folksdev/account/model/Transaction.kt" beforeDir="false" afterPath="$PROJECT_DIR$/account/src/main/java/com/folksdev/account/model/Transaction.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account/src/main/java/com/folksdev/account/service/AccountService.java" beforeDir="false" afterPath="$PROJECT_DIR$/account/src/main/java/com/folksdev/account/service/AccountService.java" afterDir="false" />
-    </list>
+    <list default="true" id="d0abfc0a-638b-4a96-b51e-5727e1c310e3" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -51,29 +44,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/JavaForBeginner/account-folksdev&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;project.kotlinCompiler&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;e268443e43d93dab7ebef303bbe9642f&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "D:/JavaForBeginner/account-folksdev-react",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "project.kotlinCompiler",
+    "spring.configuration.checksum": "e268443e43d93dab7ebef303bbe9642f"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="AccountFolksdevApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="account" />
@@ -102,6 +95,7 @@
       <workItem from="1673125117163" duration="4214000" />
       <workItem from="1673257094624" duration="5439000" />
       <workItem from="1673338967467" duration="2296000" />
+      <workItem from="1673342656352" duration="298000" />
     </task>
     <servers />
   </component>
