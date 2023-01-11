@@ -15,12 +15,12 @@ public class Transaction {
     @Id
     @GeneratedValue(generator = "UUID")
     @GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
-    private String id;
-    private BigDecimal balance;
-    private LocalDateTime creationDate;
+    private TransactionType transactionType = TransactionType.INITIAL;
+    private BigDecimal amount;
+    private LocalDateTime transactionDate;
 
     @ManyToOne(fetch = FetchType.LAZY,
-            cascade = CascadeType.ALL)
-    @JoinColumn(name = "customer_id",nullable = false)
-    private Customer customer;
+            optional = false, cascade = CascadeType.ALL)
+    @JoinColumn(name = "accound_id", nullable = false)
+    private Account account;
 }
