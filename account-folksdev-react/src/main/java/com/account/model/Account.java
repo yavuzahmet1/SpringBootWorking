@@ -1,5 +1,6 @@
 package com.account.model;
 
+import com.account.dto.TransactionDto;
 import jakarta.persistence.*;
 import lombok.Data;
 import org.hibernate.Hibernate;
@@ -27,17 +28,19 @@ public class Account {
 
     @OneToMany(mappedBy = "account",
             fetch = FetchType.LAZY)
-    private Set<Transaction> transactionSet;
+    private Set<Transaction> transaction;
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Account account)) return false;
-        return getId().equals(account.getId()) && getBalance().equals(account.getBalance()) && getCreationDate().equals(account.getCreationDate()) && getCustomer().equals(account.getCustomer()) && getTransactionSet().equals(account.getTransactionSet());
+        return getId().equals(account.getId()) && getBalance().equals(account.getBalance()) && getCreationDate().equals(account.getCreationDate()) && getCustomer().equals(account.getCustomer()) && getTransaction().equals(account.getTransaction());
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(getId(), getBalance(), getCreationDate(), getCustomer());
     }
+
+
 }
