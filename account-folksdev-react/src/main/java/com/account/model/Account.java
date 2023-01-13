@@ -1,9 +1,7 @@
 package com.account.model;
 
-import com.account.dto.TransactionDto;
 import jakarta.persistence.*;
 import lombok.Data;
-import org.hibernate.Hibernate;
 import org.hibernate.annotations.GenericGenerator;
 
 import java.math.BigDecimal;
