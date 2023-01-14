@@ -30,7 +30,11 @@ public class Transaction {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Transaction that)) return false;
-        return getId().equals(that.getId()) && getTransactionType() == that.getTransactionType() && getAmount().equals(that.getAmount()) && getTransactionDate().equals(that.getTransactionDate());
+        return getId()
+                .equals(that.getId())
+                && getTransactionType() == that.getTransactionType()
+                && getAmount().equals(that.getAmount())
+                && getTransactionDate().equals(that.getTransactionDate());
     }
 
     @Override
