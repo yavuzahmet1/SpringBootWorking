@@ -23,8 +23,16 @@ public class Transaction {
 
     @ManyToOne(fetch = FetchType.LAZY,
             optional = false, cascade = CascadeType.ALL)
-    @JoinColumn(name = "accound_id", nullable = false)
+    @JoinColumn(name = "account_id", nullable = false)
     private Account account;
+
+    public Transaction(BigDecimal amount,  Account account) {
+        this.id = null;
+        this.amount = amount;
+        this.transactionDate = LocalDateTime.now();
+        this.transactionType = TransactionType.INITIAL;
+        this.account = account;
+    }
 
     @Override
     public boolean equals(Object o) {
