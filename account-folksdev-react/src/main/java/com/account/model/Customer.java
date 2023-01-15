@@ -1,6 +1,7 @@
 package com.account.model;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import org.hibernate.annotations.GenericGenerator;
 
@@ -9,6 +10,7 @@ import java.util.Set;
 
 @Entity
 @Data
+@AllArgsConstructor
 public class Customer {
     @Id
     @GeneratedValue(generator = "UUID")

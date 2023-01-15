@@ -2,12 +2,14 @@ package com.account.dto;
 
 import com.account.model.Account;
 import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
 import java.util.stream.Collectors;
 
 @Component
+@Data
 @AllArgsConstructor
 public class AccountDtoConverter {
     private final CustomerDtoConverter customerDtoConverter;
