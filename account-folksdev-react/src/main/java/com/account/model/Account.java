@@ -27,7 +27,7 @@ public class Account {
     private Customer customer;
 
     @OneToMany(mappedBy = "account",
-            fetch = FetchType.LAZY)
+            fetch = FetchType.EAGER,cascade = CascadeType.ALL)
     private Set<Transaction> transaction;
 
     public Account(Customer customer, BigDecimal balance, LocalDateTime creationDate) {

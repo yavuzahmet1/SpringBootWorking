@@ -22,11 +22,11 @@ public class Transaction {
     private LocalDateTime transactionDate;
 
     @ManyToOne(fetch = FetchType.LAZY,
-            optional = false, cascade = CascadeType.ALL)
+            optional = false)
     @JoinColumn(name = "account_id", nullable = false)
     private Account account;
 
-    public Transaction(BigDecimal amount,  Account account) {
+    public Transaction(BigDecimal amount, Account account) {
         this.id = null;
         this.amount = amount;
         this.transactionDate = LocalDateTime.now();

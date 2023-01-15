@@ -23,7 +23,7 @@ public class AccountFolksdevApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		Customer customer=new Customer("","Ahmet","YAVUZ",new HashSet<>());
-		System.out.println(customer);
+		System.out.println(customer.getId()+customer.getName());
 
 	}
 }
