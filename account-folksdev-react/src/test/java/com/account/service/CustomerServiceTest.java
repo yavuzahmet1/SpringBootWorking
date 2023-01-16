@@ -1,6 +1,8 @@
 package com.account.service;
 
+import com.account.dto.CustomerDto;
 import com.account.dto.CustomerDtoConverter;
+import com.account.exception.CustomerNotFoundException;
 import com.account.model.Customer;
 import com.account.repository.CustomerRepository;
 import org.junit.jupiter.api.BeforeEach;
@@ -36,6 +38,31 @@ public class CustomerServiceTest {
 
         assertEquals(result,
                 customer);
+    }
+
+    @Test
+    public void testFindByCustomerId_whenCustomerIdDoesNotExist_shouldThrowCustomerNotFoundException() {
+
+
+        Mockito.when(customerRepository.findById("id")).thenReturn(Optional.empty());
+
+        assertThrows(CustomerNotFoundException.class, () -> service.findCustomerById("id"));
+
+
+    }
+
+    @Test
+    public void testGetCustomerById_whenCustomerIdDoesNotExists_shouldThrowCustomerNotFoundException() {
+
+
+        Mockito.when(customerRepository.findById("id")).thenReturn(Optional.empty());
+
+        assertThrows(CustomerNotFoundException.class,
+                () -> service.getCustomerById("id"));
+
+        Mockito.verifyNoInteractions(converter);
+
+
     }
 
 }
