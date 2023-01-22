@@ -23,11 +23,18 @@ public class Customer {
             fetch = FetchType.LAZY)
     private Set<Account> accounts;
 
+    public Customer() {
+
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Customer customer)) return false;
-        return getId().equals(customer.getId()) && getName().equals(customer.getName()) && getLastName().equals(customer.getLastName()) && getAccounts().equals(customer.getAccounts());
+        return getId().equals(customer.getId())
+                && getName().equals(customer.getName())
+                && getLastName().equals(customer.getLastName())
+                && getAccounts().equals(customer.getAccounts());
     }
 
     @Override
