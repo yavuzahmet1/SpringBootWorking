@@ -1,8 +1,10 @@
 package com.commerce.service;
 
 import com.commerce.dto.CreateUserRequest;
+import com.commerce.dto.UpdateUserRequest;
 import com.commerce.dto.UserDto;
 import com.commerce.dto.UserDtoConverter;
+import com.commerce.exception.UserNotFoundException;
 import com.commerce.model.User;
 import com.commerce.repository.UserRepository;
 import org.springframework.stereotype.Service;
@@ -35,10 +37,26 @@ public class UserService {
     }
 
     public UserDto createUser(CreateUserRequest userRequest) {
-        User user=new User(userRequest.getMail(),
+        User user = new User(null,
                 userRequest.getName(),
                 userRequest.getLastName(),
-                userRequest.getMiddleName());
-        return null;
+                userRequest.getMiddleName(),
+                userRequest.getMail());
+        return userDtoConverter.convert(userRepository.save(user));
     }///58.00 dakikada kaldım
+
+    public UserDto updateUser(Long id, UpdateUserRequest updateUserRequest) {
+        User user = findUserById(id);
+        User updatedUser = new User(user.getId(),
+                updateUserRequest.getName(),
+                updateUserRequest.getLastName(),
+                updateUserRequest.getMiddleName(),
+                user.getMail());
+        return userDtoConverter.convert(userRepository.save(updatedUser));
+    }
+
+    private User findUserById(Long id) {
+        return userRepository.findById(id)
+                .orElseThrow(() -> new UserNotFoundException("User couldn't be found by following id :" + id));
+    }
 }

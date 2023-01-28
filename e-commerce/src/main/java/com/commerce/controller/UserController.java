@@ -30,16 +30,16 @@ public class UserController {
     }
 
     @PostMapping
-    public ResponseEntity<User> createUser(@RequestBody CreateUserRequest createUserRequest) {
+    public ResponseEntity<UserDto> createUser(@RequestBody CreateUserRequest createUserRequest) {
         return ResponseEntity.ok(userService.createUser(createUserRequest));
     }
 
     @PutMapping
-    public ResponseEntity<User> updateUser(@RequestBody UpdateUserRequest updateUserRequest) {
-        return ResponseEntity.ok(userService.updateUser(updateUserRequest));
+    public ResponseEntity<UserDto> updateUser(@PathVariable Long id, @RequestBody UpdateUserRequest updateUserRequest) {
+        return ResponseEntity.ok(userService.updateUser(id, updateUserRequest));
     }
 
-    @PatchMapping("/id")
+   /* @PatchMapping("/id")
     public ResponseEntity<Void> deactiveUser(@PathVariable Long id) {
         userService.deactiveUser(id);
         return ResponseEntity.ok().build();
@@ -49,5 +49,5 @@ public class UserController {
     public ResponseEntity<Void> deleteUser(@PathVariable Long id) {
         userService.deleteUser(id);
         return ResponseEntity.ok().build();
-    }
-}
+    }*/
+}//1.10 dakikada kaldım
