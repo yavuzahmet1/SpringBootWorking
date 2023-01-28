@@ -35,6 +35,10 @@ public class UserService {
     }
 
     public UserDto createUser(CreateUserRequest userRequest) {
-        User user=new User(userRequest.getMail(),userRequest.getName(),userRequest.getLastName(),userRequest.getMiddleName());
+        User user=new User(userRequest.getMail(),
+                userRequest.getName(),
+                userRequest.getLastName(),
+                userRequest.getMiddleName());
+        return null;
     }///58.00 dakikada kaldım
 }
