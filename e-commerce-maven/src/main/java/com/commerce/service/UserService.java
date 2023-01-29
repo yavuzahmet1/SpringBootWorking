@@ -23,11 +23,12 @@ public class UserService {
     }
 
     public List<UserDto> getAllUsers() {
-        return userRepository.findAll()
-                .stream()
+         List<UserDto> users=userRepository.findAll().
+               stream()
                 //.map(convert->userDtoConverter.convert(convert))
                 .map(userDtoConverter::convert)
                 .collect(Collectors.toList());
+        return users;
     }
 
     public UserDto getByUserId(Long id) {
@@ -47,19 +48,25 @@ public class UserService {
     public UserDto updateUser(Long id, UpdateUserRequest updateUserRequest) {
         User user = findUserById(id);
         User updateUser = new User(user.getId(),
-                user.getName(),
-                user.getLastName(),
-                user.getMiddleName(),
+                updateUserRequest.getName(),
+                updateUserRequest.getLastName(),
+                updateUserRequest.getMiddleName(),
                 user.getEmail());
         return userDtoConverter.convert(userRepository.save(updateUser));
     }
     public void deleteUser(Long id) {
-        User user = findUserById(id);
-        userRepository.delete(user);
+        userRepository.deleteById(id);
+        /*User user = findUserById(id);
+        userRepository.delete(user);*/
     }
     private User findUserById(Long id) {
         return userRepository.findById(id)
                 .orElseThrow(
                         () -> new UserNotFoundException("User couldn't be found by following id : " + id));
     }
+    /*private User findUserByMail(String mail) {
+        return userRepository.findByMail(mail)
+                .orElseThrow(
+                        () -> new UserNotFoundException("User couldn't be found by following id : " + mail));
+    }*/
 }
