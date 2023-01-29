@@ -3,7 +3,6 @@ package com.commerce.controller;
 import com.commerce.dto.CreateUserRequest;
 import com.commerce.dto.UpdateUserRequest;
 import com.commerce.dto.UserDto;
-import com.commerce.model.User;
 import com.commerce.service.UserService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -50,4 +49,4 @@ public class UserController {
         userService.deleteUser(id);
         return ResponseEntity.ok().build();
     }*/
-}//1.10 dakikada kaldım
+}//1.10 dakikada kaldımcd d:

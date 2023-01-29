@@ -43,7 +43,7 @@ public class UserService {
                 userRequest.getMiddleName(),
                 userRequest.getMail());
         return userDtoConverter.convert(userRepository.save(user));
-    }///58.00 dakikada kaldım
+    }
 
     public UserDto updateUser(Long id, UpdateUserRequest updateUserRequest) {
         User user = findUserById(id);
