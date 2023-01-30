@@ -38,8 +38,21 @@ public class UserController {
                                               @RequestBody UpdateUserRequest updateUserRequest) {
         return ResponseEntity.ok(userService.updateUser(id, updateUserRequest));
     }
-    @DeleteMapping("/id")
-    public void deleteUser(@PathVariable Long id){
+
+    @PatchMapping("/{id}")
+    public ResponseEntity<Void> deactiveUser(@PathVariable Long id) {
+        userService.deactiveUser(id);
+        return ResponseEntity.ok().build();
+    }
+    @PatchMapping("/{id}/active")
+    public ResponseEntity<Void> activeUser(@PathVariable Long id) {
+        userService.activeUser(id);
+        return ResponseEntity.ok().build();
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteUser(@PathVariable Long id) {
         userService.deleteUser(id);
+        return ResponseEntity.ok().build();
     }
 }
