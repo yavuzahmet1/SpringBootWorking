@@ -52,7 +52,7 @@ public class UserService {
     public UserDto updateUser(Long id, UpdateUserRequest updateUserRequest) {
         User user = findUserById(id);
         if (!user.getIsActive()) {
-            logger.warn("The user wanted update is not active!");
+            logger.warn(String.format("The user wanted update is not active!"));
             throw new UserIsNotActiveException();
         }
         User updateUser = new User(user.getId(),
@@ -61,10 +61,14 @@ public class UserService {
                 updateUserRequest.getMiddleName(),
                 user.getEmail(), true);
         return userDtoConverter.convert(userRepository.save(updateUser));
-    }////e-ticaret projesi 14. minutes
+    }
 
     public void deleteUser(Long id) {
-        userRepository.deleteById(id);
+        if (doesUserExist(id)) {
+            userRepository.deleteById(id);
+        } else {
+            throw new UserNotFoundException("User couldn't be found by following id :" + id);
+        }
     }
 
     private User findUserById(Long id) {
@@ -73,11 +77,28 @@ public class UserService {
                         () -> new UserNotFoundException("User couldn't be found by following id : " + id));
     }
 
-    public void deactiveUser(Long id) {
+    public void deactivateUser(Long id) {
+        changeActivateUser(id, false);
     }
 
     public void activeUser(Long id) {
+        changeActivateUser(id, true);
     }
+
+    private void changeActivateUser(Long id, Boolean isActive) {
+        User user = findUserById(id);
+        User updateUser = new User(user.getId(),
+                user.getName(),
+                user.getLastName(),
+                user.getMiddleName(),
+                user.getEmail(), isActive);
+        userRepository.save(updateUser);
+    }
+
+    private boolean doesUserExist(Long id) {
+        return userRepository.existsById(id);
+    }
+
     /*private User findUserByMail(String mail) {
         return userRepository.findByMail(mail)
                 .orElseThrow(
