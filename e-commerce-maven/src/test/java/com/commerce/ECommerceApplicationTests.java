@@ -8,6 +8,6 @@ class ECommerceApplicationTests {
 
 	@Test
 	void contextLoads() {
-	}
+	}//47.00 da kaldım
 
 }

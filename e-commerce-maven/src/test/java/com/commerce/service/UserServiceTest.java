@@ -1,14 +1,20 @@
 package com.commerce.service;
 
 import com.commerce.TestSupport;
+import com.commerce.dto.UserDto;
 import com.commerce.dto.UserDtoConverter;
 import com.commerce.model.User;
 import com.commerce.repository.UserRepository;
+
+import org.assertj.core.api.Assert;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
+
 import java.util.List;
+
+import static org.mockito.Mockito.when;
 
 
 class UserServiceTest extends TestSupport {
@@ -27,7 +33,12 @@ class UserServiceTest extends TestSupport {
     @Test
     public void testGetAllUsers_itShouldReturnUserDtoList() {
         List<User> userList = generateUsers();
-        Mockito.when(repository.findAll()).thenReturn(userList);
-        Mockito.when(converter.convertList(userList));
+        when(repository.findAll()).thenReturn(userList);
+        when(converter.convertList(userList));
+
+        List<UserDto> result=userService.getAllUsers();
+
+
+
     }
 }

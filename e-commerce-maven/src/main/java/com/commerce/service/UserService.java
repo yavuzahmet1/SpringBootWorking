@@ -27,12 +27,12 @@ public class UserService {
     }
 
     public List<UserDto> getAllUsers() {
-        List<UserDto> users = userRepository.findAll().
+        /*List<UserDto> users = userRepository.findAll().
                 stream()
                 //.map(convert->userDtoConverter.convert(convert))
                 .map(userDtoConverter::convert)
-                .collect(Collectors.toList());
-        return users;
+                .collect(Collectors.toList());*///converterde olduğundan tekrar eklemeye gerek yok
+        return userDtoConverter.convertList(userRepository.findAll());
     }
 
     public UserDto getByUserId(Long id) {
