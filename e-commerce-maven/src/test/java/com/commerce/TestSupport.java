@@ -32,4 +32,15 @@ public class TestSupport {
                                 from.getEmail()))
                 .collect(Collectors.toList());
     }
+    public static List<UserDto> generateUsersAll(List<User> userList) {
+        return userList.stream()
+                .map(from ->
+                        new UserDto(
+                                from.getId(),
+                                from.getName(),
+                                from.getLastName(),
+                                from.getMiddleName(),
+                                from.getEmail()))
+                .collect(Collectors.toList());
+    }
 }
