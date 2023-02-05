@@ -11,10 +11,11 @@ public class UserDetailsDtoConverter {
      public UserDetailsDto convert(UserDetails from){
          return new UserDetailsDto(from.getPhoneNumber(),
                  from.getAddress(),
+                 from.getCity(),
                  from.getCountry(),
-                 from.getPostCode());
+                 from.getPostCode();
      }
-    public List<UserDetailsDto> convert(List<UserDetails> from){
+    public List<UserDetailsDto> convertList(List<UserDetails> from){
         return from.stream()
                 .map(this::convert).collect(Collectors.toList());
     }

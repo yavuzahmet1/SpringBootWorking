@@ -15,12 +15,22 @@ public class UserDetails {
     private Long id;
     private String phoneNumber;
     private String address;
+    private String city;
     private String country;
     private String postCode;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
+
+    public UserDetails(String phoneNumber, String address, String city, String country, String postCode, User user) {
+        this.phoneNumber = phoneNumber;
+        this.address = address;
+        this.city = city;
+        this.country = country;
+        this.postCode = postCode;
+        this.user = user;
+    }
 
     @Override
     public boolean equals(Object o) {

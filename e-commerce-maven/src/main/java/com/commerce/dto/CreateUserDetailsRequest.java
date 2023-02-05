@@ -7,6 +7,7 @@ public class CreateUserDetailsRequest {
     private Long userId;
     private String phoneNumber;
     private String address;
+    private String city;
     private String country;
     private String postCode;
 
