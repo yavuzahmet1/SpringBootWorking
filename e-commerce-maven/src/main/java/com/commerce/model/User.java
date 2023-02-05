@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.Set;
+
 @Entity
 @Table(name = "users")
 @Data
@@ -22,6 +24,9 @@ public class User {
     @Column(unique = true)
     private String email;
     private Boolean isActive;
+
+    @OneToMany(mappedBy = "user",fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    private Set<UserDetails> userDetailsSet;
 
 
 }
