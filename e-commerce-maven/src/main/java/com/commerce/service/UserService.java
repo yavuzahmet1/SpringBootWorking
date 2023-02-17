@@ -27,11 +27,6 @@ public class UserService {
     }
 
     public List<UserDto> getAllUsers() {
-        /*List<UserDto> users = userRepository.findAll().
-                stream()
-                //.map(convert->userDtoConverter.convert(convert))
-                .map(userDtoConverter::convert)
-                .collect(Collectors.toList());*///converterde olduğundan tekrar eklemeye gerek yok
         return userDtoConverter.convertList(userRepository.findAll());
     }
 
@@ -41,11 +36,12 @@ public class UserService {
     }
 
     public UserDto createUser(CreateUserRequest createUserRequest) {
-        User user = new User(null,
+        User user = new User(
+                null,
                 createUserRequest.getName(),
                 createUserRequest.getLastName(),
                 createUserRequest.getMiddleName(),
-                createUserRequest.getEmail(), true);
+                createUserRequest.getEmail(), true, null);
         return userDtoConverter.convert(userRepository.save(user));
     }
 
@@ -55,11 +51,12 @@ public class UserService {
             logger.warn(String.format("The user wanted update is not active!"));
             throw new UserIsNotActiveException();
         }
-        User updateUser = new User(user.getId(),
+        User updateUser = new User(
+                user.getId(),
                 updateUserRequest.getName(),
                 updateUserRequest.getLastName(),
                 updateUserRequest.getMiddleName(),
-                user.getEmail(), true);
+                user.getEmail(), true, user.getUserDetailsSet());
         return userDtoConverter.convert(userRepository.save(updateUser));
     }
 
@@ -87,11 +84,12 @@ public class UserService {
 
     private void changeActivateUser(Long id, Boolean isActive) {
         User user = findUserById(id);
-        User updateUser = new User(user.getId(),
+        User updateUser = new User(
+                user.getId(),
                 user.getName(),
                 user.getLastName(),
                 user.getMiddleName(),
-                user.getEmail(), isActive);
+                user.getEmail(), isActive, user.getUserDetailsSet());
         userRepository.save(updateUser);
     }
 
