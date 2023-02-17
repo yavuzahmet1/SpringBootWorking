@@ -1,5 +1,6 @@
 package com.commerce.dto;
 
+import com.commerce.model.User;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
@@ -11,6 +12,6 @@ public class UserDetailsDto {
     private String city;
     private String country;
     private String postCode;
-    private String user;
+    private User user;
 
 }

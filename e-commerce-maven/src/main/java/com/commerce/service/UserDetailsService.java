@@ -30,10 +30,10 @@ public class UserDetailsService {
                 request.getAddress(),
                 request.getCity(),
                 request.getCountry(),
-                request.getPostCode(),
-                user);
+                request.getPostCode(),user
+                );
 
-        return converter.convert(userDetailsRepository.save(userDetails));
+        return converter.convert(userDetails);
     }
 
 } //hata var kaldığım video dakikası 37. dakika bakılacak
