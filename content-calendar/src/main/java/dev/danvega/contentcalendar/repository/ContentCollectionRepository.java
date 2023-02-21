@@ -39,10 +39,19 @@ public class ContentCollectionRepository {
                 null,
                 "");
         contents.add(c);
+        Content c1 = new Content(2,
+                "My Second Blog Post",
+                "My second blog post",
+                Status.IDEA,
+                Type.ARTICLE,
+                LocalDateTime.now(),
+                null,
+                "");
+        contents.add(c1);
     }
 
     public void save(Content content) {
-        contents.removeIf(c->c.id().equals(content.id()));
+        contents.removeIf(c -> c.id().equals(content.id()));
         contents.add(content);
     }
 
@@ -52,5 +61,8 @@ public class ContentCollectionRepository {
                 .count() == 1;
     }
 
-    ///1.30 da kaldım
+    public void delete(Integer id) {
+        contents.removeIf(c -> c.id().equals(id));
+    }
+
 }
