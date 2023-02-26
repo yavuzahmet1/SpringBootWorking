@@ -49,10 +49,29 @@ console.log(points)// [20, 11, 34, 54] array olarak gönderir
 console.log("ABC","D","EFG","H") //ABC D EFG H
 console.log(..."ABC","D",..."EFG","H")//A B C D E F G H elimizdeki veriyi ayşıştırıyoruz
 
-//Destrucructiring->react dünyasında çok kullanılır
+//Destructuring->react dünyasında çok kullanılır
 //Elimizde arraylar var bunları değişkenlere aktarır
 
-let populations=[1000,2000,3000]
-let [small,medium,large]=populations
+let populations=[1000,2000,3000,[7000,9000]]
+let [small,medium,large,veryLarge,maximum]=populations
 
+console.log(small)
 console.log(medium)
+console.log(large)
+console.log(veryLarge)
+console.log(maximum)//->atanacak değer yok undefined
+
+function someFunction([small1],number){
+console.log(small1)
+}
+
+someFunction(populations)
+
+let category={id:1,name:"drink"}
+console.log(category.id)
+console.log(category.name)
+console.log(category["name"])
+
+let{id,name}=category
+console.log(id)
+console.log(name)
