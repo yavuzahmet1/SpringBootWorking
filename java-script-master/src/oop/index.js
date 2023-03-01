@@ -7,7 +7,7 @@ class Customer{
 
 let customer=new Customer(1,"123555");
 
-//prototyping
+//prototyping 
 customer.name="Ahmet YAVUZ"
 console.log(customer.name)
 Customer.bisey="Bisey"
