@@ -1,18 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
-    <annotationProcessing>
-      <profile name="Maven default annotation processors profile" enabled="true">
-        <sourceOutputDir name="target/generated-sources/annotations" />
-        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
-        <outputRelativeToContentRoot value="true" />
-      </profile>
-    </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="validating-form-input" target="17" />
       <module name="validating-form-input-initial" target="17" />
-      <module name="validating-form-input.main" target="17" />
-      <module name="validating-form-input.test" target="17" />
     </bytecodeTargetLevel>
   </component>
 </project>
