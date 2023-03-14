@@ -11,6 +11,8 @@
     <bytecodeTargetLevel>
       <module name="validating-form-input" target="17" />
       <module name="validating-form-input-initial" target="17" />
+      <module name="validating-form-input.main" target="17" />
+      <module name="validating-form-input.test" target="17" />
     </bytecodeTargetLevel>
   </component>
 </project>
