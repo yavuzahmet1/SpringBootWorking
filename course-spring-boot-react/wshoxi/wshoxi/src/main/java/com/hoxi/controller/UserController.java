@@ -1,28 +1,33 @@
 package com.hoxi.controller;
 
 import com.hoxi.entity.User;
-import com.hoxi.repository.UserRepository;
+import com.hoxi.service.UserService;
+import com.hoxi.shered.GenericResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class UserController {
-    private static final Logger log= LoggerFactory.getLogger(UserController.class);
-    @Autowired
-    UserRepository userRepository;
+    private static final Logger log = LoggerFactory.getLogger(UserController.class);
 
+    private final UserService userService;
+
+    public UserController(UserService userService) {
+        this.userService = userService;
+    }
 
 
     @CrossOrigin
     @PostMapping("/api/1.0/users")
-    public void createUser(@RequestBody User user){
+    @ResponseStatus(HttpStatus.CREATED)
+    public GenericResponse createUser(@RequestBody User user) {
         log.info(user.toString());
-        userRepository.save(user);
+        userService.saveUser(user);
+        GenericResponse generic = new GenericResponse("User created!");
+        //generic.setMessage("User created!");
+        return generic;
 
 
     }
