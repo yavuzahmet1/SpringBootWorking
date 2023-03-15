@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
+//import App from './App';
+import './bootstrap-override.scss'
 import UserSingupPage from './UserSingupPage';
 import reportWebVitals from './reportWebVitals';
 

@@ -6,7 +6,8 @@ class UserSingupPage extends React.Component {
         userName: null,
         displayName: null,
         password: null,
-        passwordRepeat: null
+        passwordRepeat: null,
+        pendingApiCall: false
     };
 
     onChange = event => {
@@ -21,16 +22,21 @@ class UserSingupPage extends React.Component {
     onClickSignup = event => {
         event.preventDefault();
 
-        const{userName,displayName,password}=this.state;
+        const { userName, displayName, password } = this.state;
 
         const body = {
             userName,
             displayName,
             password
         };
+        this.setState({ pendingApiCall: true });
 
         //axios.post('http://localhost:8085/api/1.0/users', body);
-        axios.post('/api/1.0/users', body);
+
+        axios.post('/api/1.0/users', body).then(response => {
+            this.setState({ pendingApiCall: false });
+
+        });
     };
 
     /*
@@ -61,29 +67,43 @@ class UserSingupPage extends React.Component {
 
     render() {
         return (
-            <form>
-                <h1>Sign Up</h1>
-                <div>
-                    <label>UserName</label>
-                    <input name="userName" onChange={this.onChange} />
-                </div>
-                <div>
-                    <label>DisplayName</label>
-                    <input name="displayName" onChange={this.onChange} />
-                </div>
-                <div>
-                    <label>Password</label>
-                    <input name="password" type={"password"} onChange={this.onChange} />
-                </div>
-                <div>
-                    <label>Password Repeat</label>
-                    <input name="passwordRepeat" type={"password"} onChange={this.onChange} />
-                </div>
-                <button onClick={ this.onClickSignup}>Sing Up</button>
-            </form>
+            <div className="container">
+                <form>
+                    <h1 className="text-center">Sign Up</h1>
+                    <div className="mb-3">
+                        <label>UserName</label>
+                        <input className="form-control" name="userName" onChange={this.onChange} />
+                    </div>
+                    <div className="mb-3">
+                        <label>DisplayName</label>
+                        <input className="form-control" name="displayName" onChange={this.onChange} />
+                    </div>
+                    <div className="mb-3">
+                        <label>Password</label>
+                        <input className="form-control" name="password" type={"password"} onChange={this.onChange} />
+                    </div>
+                    <div className="mb-3">
+                        <label>Password Repeat</label>
+                        <input className="form-control" name="passwordRepeat" type={"password"} onChange={this.onChange} />
+                    </div >
+                    <div className="text-center">
+                        <button
+                            className="btn btn-primary"
+                            onClick={this.onClickSignup}
+                            disabled={this.pendingApiCall}>Sing Up</button>
+                    </div>
+
+                </form>
+            </div>
+
         );
     }
 
 }
 
 export default UserSingupPage;
+
+
+
+
+////20. böüm 7. dk da kaldım
