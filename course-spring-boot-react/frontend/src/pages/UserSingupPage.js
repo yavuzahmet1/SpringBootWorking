@@ -1,5 +1,6 @@
 import React from "react";
-import axios from "axios";
+//import axios from "axios";
+import{signUp}from'../api/apiCalls';
 
 class UserSingupPage extends React.Component {
     state = {
@@ -19,7 +20,7 @@ class UserSingupPage extends React.Component {
 
     };
 
-    onClickSignup = event => {
+    onClickSignup = async event => {//asenkron yapısı olduğunu belişrmemiz gerekiyor bu yüzen başına async koyduk
         event.preventDefault();
 
         const { userName, displayName, password } = this.state;
@@ -33,9 +34,11 @@ class UserSingupPage extends React.Component {
 
         //axios.post('http://localhost:8085/api/1.0/users', body);
 
-        axios.post('/api/1.0/users', body).then(response => {
+        //axios.post('/api/1.0/users', body) burayı signUp olarak değişrip yeniden yazdık
+            signUp(body)
+            .then(response => {this.setState({ pendingApiCall: false });
+        }).catch(error => {
             this.setState({ pendingApiCall: false });
-
         });
     };
 
@@ -90,7 +93,10 @@ class UserSingupPage extends React.Component {
                         <button
                             className="btn btn-primary"
                             onClick={this.onClickSignup}
-                            disabled={this.pendingApiCall}>Sing Up</button>
+                            disabled={this.state.pendingApiCall}>
+                            {this.state.pendingApiCall && <span class="spinner-border spinner-border-sm"></span>}Sing Up
+                            
+                            </button>
                     </div>
 
                 </form>
@@ -102,8 +108,25 @@ class UserSingupPage extends React.Component {
 }
 
 export default UserSingupPage;
+//conditional rendering nedir araştır.
+//&& işateri belli koşullara bağlı render etme ->sol taraf true ise sağ tarafı ekle, false ise ekleme anlamında
+//? işareti ise se şunu yap değilse bunu yap-->
+//axios ile ilgili detaylı araştır
+//sass araştır??
+//async -ile çağrıları await edebiliyoruz yani->
+    /*signUp(body)
+    .then(response => {this.setState({ pendingApiCall: false });
+    }).catch(error => {
+    this.setState({ pendingApiCall: false });
+    });->bunun yerine 
+        
+        const response=await signUp(body);    codumuzun bu noktada biraz beklemesini ve cevabı alduktan sonra responseye düşer*/
 
+       /* error tarafını nasıl hallediyoruz bu durmda kodumuzu try catch bloguna alıyoruz yani->
+        try{
+            const response=await signUp(body);
+        }catch(error){
 
+        }*/
+         
 
-
-////20. böüm 7. dk da kaldım
