@@ -1,5 +1,5 @@
 import React from "react";
-//import axios from "axios";
+//import axios from "axios";//buna gerek kalmadı importumuz artık api clasörü içinden
 import { signUp } from '../api/apiCalls';
 
 class UserSingupPage extends React.Component {
@@ -33,19 +33,24 @@ class UserSingupPage extends React.Component {
         this.setState({ pendingApiCall: true });
 
 
+        try {
+            const response = await signUp(body);
+        } catch (error) {}
 
-        //axios.post('http://localhost:8085/api/1.0/users', body);
+        this.setState({ pendingApiCall: false });
 
 
-        /*axios
-            .post('/api/1.0/users', body)*/
-        signUp(body) //burayı signUp olarak değişrip yeniden yazdık*/
-            .then((response) => {
-                this.setState({ pendingApiCall: false });
-            }).catch(error => {
-                this.setState({ pendingApiCall: false });
-            }); 
+        /*/*axios
+            .post('/api/1.0/users', body)*///burayı signUp olarak değişrip yeniden yazdık*/
+        /* signUp(body) 
+             .then((response) => {
+                 this.setState({ pendingApiCall: false });
+             }).catch(error => {
+                 this.setState({ pendingApiCall: false });
+             }); */
     };
+
+
     /*
         onChangeUserName = event => {
             this.setState({
@@ -73,6 +78,7 @@ class UserSingupPage extends React.Component {
     */
 
     render() {
+        const{pendingApiCall}=this.state;
         return (
 
             <div className="container">
@@ -98,8 +104,8 @@ class UserSingupPage extends React.Component {
                         <button
                             className="btn btn-primary"
                             onClick={this.onClickSignup}
-                            disabled={this.state.pendingApiCall}>
-                            {this.State.pendingApiCall && <span class="spinner-border spinner-border-sm"></span>}
+                            disabled={pendingApiCall}>
+                            {pendingApiCall && <span class="spinner-border spinner-border-sm"></span>}
                             Sing Up
 
                         </button>
@@ -114,6 +120,8 @@ class UserSingupPage extends React.Component {
 } export default UserSingupPage;
 
 /**/
+
+//axios.post('http://localhost:8085/api/1.0/users', body);
 
 //conditional rendering nedir araştır.
 //&& işateri belli koşullara bağlı render etme ->sol taraf true ise sağ tarafı ekle, false ise ekleme anlamında
