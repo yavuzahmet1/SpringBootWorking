@@ -32,55 +32,22 @@ class UserSingupPage extends React.Component {
         };
 
         this.setState({ pendingApiCall: true });
-        
+
         try {
 
             const response = await signUp(body);
 
-        } catch (error) {}
+        } catch (errors) { }
 
         this.setState({ pendingApiCall: false });
 
 
-        /*/*axios
-            .post('/api/1.0/users', body)*///burayı signUp olarak değişrip yeniden yazdık*/
-        /* signUp(body) 
-             .then((response) => {
-                 this.setState({ pendingApiCall: false });
-             }).catch(error => {
-                 this.setState({ pendingApiCall: false });
-             }); */
+
     };
 
 
-    /*
-        onChangeUserName = event => {
-            this.setState({
-                username: event.target.value
-            });
-        };
-    
-        onChangeDisplayName = event => {
-            this.setState({
-                displayname: event.target.value
-            });
-        };
-    
-        onChangePassword = event => {
-            this.setState({
-                password: event.target.value
-            });
-        };
-    
-        onChangePasswordRepeat = event => {
-            this.setState({
-                passwordRepeat: event.target.value
-            });
-        };
-    */
-
     render() {
-        const{pendingApiCall}=this.state;
+        const { pendingApiCall } = this.state;
         return (
 
             <div className="container">
@@ -88,7 +55,8 @@ class UserSingupPage extends React.Component {
                     <h1 className="text-center">Sign Up</h1>
                     <div className="mb-3">
                         <label>UserName</label>
-                        <input className="form-control" name="userName" onChange={this.onChange} />
+                        <input className="form-control is-invalid" name="userName" onChange={this.onChange} />
+                        <div className="invalid-feedback">{this.state.errors}</div>
                     </div>
                     <div className="mb-3">
                         <label>DisplayName</label>
@@ -109,7 +77,6 @@ class UserSingupPage extends React.Component {
                             disabled={pendingApiCall}>
                             {pendingApiCall && <span class="spinner-border spinner-border-sm"></span>}
                             Sing Up
-
                         </button>
                     </div>
 
@@ -146,4 +113,38 @@ this.setState({ pendingApiCall: false });
 
  }*/
 
+/*
+       onChangeUserName = event => {
+           this.setState({
+               username: event.target.value
+           });
+       };
+   
+       onChangeDisplayName = event => {
+           this.setState({
+               displayname: event.target.value
+           });
+       };
+   
+       onChangePassword = event => {
+           this.setState({
+               password: event.target.value
+           });
+       };
+   
+       onChangePasswordRepeat = event => {
+           this.setState({
+               passwordRepeat: event.target.value
+           });
+       };
+   */
+
+/*/*axios
+.post('/api/1.0/users', body)*///burayı signUp olarak değişrip yeniden yazdık*/
+/* signUp(body)
+     .then((response) => {
+         this.setState({ pendingApiCall: false });
+     }).catch(error => {
+         this.setState({ pendingApiCall: false });
+     }); */
 
