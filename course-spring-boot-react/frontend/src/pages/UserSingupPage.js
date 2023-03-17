@@ -30,11 +30,13 @@ class UserSingupPage extends React.Component {
             displayName,
             password
         };
+
         this.setState({ pendingApiCall: true });
-
-
+        
         try {
+
             const response = await signUp(body);
+
         } catch (error) {}
 
         this.setState({ pendingApiCall: false });
