@@ -15,8 +15,11 @@ class UserSingupPage extends React.Component {
     onChange = event => {
 
         const { name, value } = event.target; //object destructure anlamına gelir kullnımı best prectisedir
+        const errors = { ...this.state.errors }
+        errors[name] = undefined
         this.setState({
-            [name]: value
+            [name]: value,
+            errors
         });
 
     };
@@ -39,8 +42,10 @@ class UserSingupPage extends React.Component {
             const response = await signUp(body);
 
         } catch (error) {
+            if (error.response.data.validationsErrors) {
+                this.setState({ errors: error.response.data.validationsErrors });
+            }
 
-            this.setState({ errors: error.response.data.validationsErrors });
         }
 
         this.setState({ pendingApiCall: false });
