@@ -8,7 +8,8 @@ class UserSingupPage extends React.Component {
         displayName: null,
         password: null,
         passwordRepeat: null,
-        pendingApiCall: false
+        pendingApiCall: false,
+        errors: {}
     };
 
     onChange = event => {
@@ -37,29 +38,30 @@ class UserSingupPage extends React.Component {
 
             const response = await signUp(body);
 
-        } catch (errors) { }
+        } catch (error) {
+
+            this.setState({ errors: error.response.data.validationsErrors });
+        }
 
         this.setState({ pendingApiCall: false });
 
-
-
     };
 
-
     render() {
-        const { pendingApiCall } = this.state;
+        const { pendingApiCall, errors } = this.state;
+        const { userName } = errors;
         return (
 
             <div className="container">
                 <form>
                     <h1 className="text-center">Sign Up</h1>
                     <div className="mb-3">
-                        <label>UserName</label>
-                        <input className="form-control is-invalid" name="userName" onChange={this.onChange} />
-                        <div className="invalid-feedback">{this.state.errors}</div>
+                        <label>User Name</label>
+                        <input className={userName ? 'form-control is-invalid' : 'form-control'} name="userName" onChange={this.onChange} />
+                        <div className="invalid-feedback">{userName}</div>
                     </div>
                     <div className="mb-3">
-                        <label>DisplayName</label>
+                        <label>Display Name</label>
                         <input className="form-control" name="displayName" onChange={this.onChange} />
                     </div>
                     <div className="mb-3">

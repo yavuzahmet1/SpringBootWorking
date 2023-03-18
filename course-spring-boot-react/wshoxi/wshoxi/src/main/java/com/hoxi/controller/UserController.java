@@ -30,11 +30,15 @@ public class UserController {
     public ResponseEntity<?> createUser(@RequestBody User user) {
 
         String userName = user.getUserName();
+
         if (userName == null || userName.isEmpty()) {
+
             ApiError error = new ApiError(400, "Validation Error", "/api/1.0/users");
+
             Map<String, String> validationsErrors = new HashMap<>();
-            validationsErrors.put("username", "username can not be null");
+            validationsErrors.put("userName", "user name can not be null");
             error.setValidationsErrors(validationsErrors);
+
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(error);
         }
 
