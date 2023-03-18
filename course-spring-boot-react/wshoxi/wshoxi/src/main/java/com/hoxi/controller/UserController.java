@@ -34,6 +34,7 @@ public class UserController {
 
         String userName = user.getUserName();
         String displayName = user.getDisplayName();
+        String password=user.getPassword();
 
         if (userName == null || userName.isEmpty()) {
             validationsErrors.put("userName", "user name can not be null");
@@ -41,6 +42,10 @@ public class UserController {
 
         if (displayName == null || displayName.isEmpty()) {
             validationsErrors.put("displayName", "display name can not be null");
+
+        }
+        if (password == null || password.isEmpty()) {
+            validationsErrors.put("password", "password can not be null");
 
         }
         if (validationsErrors.size() > 0) {
