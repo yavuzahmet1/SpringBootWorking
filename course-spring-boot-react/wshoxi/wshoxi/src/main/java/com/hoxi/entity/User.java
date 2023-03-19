@@ -1,5 +1,6 @@
 package com.hoxi.entity;
 
+import com.hoxi.anotation.UniqueUserName;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
@@ -15,14 +16,15 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @NotNull
-    @Size(min = 2,max = 20)
+    @Size(min = 2, max = 255)
+    @UniqueUserName//kendi özel anatasyonumuzu yazdık
     private String userName;
     @NotNull
-    @Size(min = 2,max = 20)
+    @Size(min = 2, max = 255)
     private String displayName;
     @NotNull
-    @Size(min = 2,max = 20)
-    @Pattern(regexp ="^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d).*$")
+    @Size(min = 2, max = 20)
+    @Pattern(regexp = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d).*$")
     private String password;
 
 

@@ -7,3 +7,9 @@ spring:
   jpa:
     hibernate:
       ddl-auto: update
+
+    properties:
+      javax:
+        persistence:
+          validation:
+            mode=none:
