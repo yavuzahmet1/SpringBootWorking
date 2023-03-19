@@ -30,7 +30,7 @@ public class UserController {
     @CrossOrigin
     @PostMapping("/api/1.0/users")
     @ResponseStatus(HttpStatus.CREATED)
-    //public ResponseEntity<?> createUser(@Valid @RequestBody User user) {
+    //public ResponseEntity<?> createUser( @RequestBody User user) {
     public GenericResponse createUser(@Valid @RequestBody User user) {
         /*ApiError error = new ApiError(400, "Validation Error", "/api/1.0/users");
 

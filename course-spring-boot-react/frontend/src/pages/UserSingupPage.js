@@ -1,3 +1,4 @@
+import { type } from "@testing-library/user-event/dist/type";
 import React from "react";
 //import axios from "axios";//buna gerek kalmadı importumuz artık api clasörü içinden
 import { signUp } from '../api/apiCalls';
@@ -63,8 +64,8 @@ class UserSingupPage extends React.Component {
                     <h1 className="text-center">Sign Up</h1>
                     <Input name="userName" label="User Name" error={userName} onChange={this.onChange} />
                     <Input name="displayName" label="Display Name" error={displayName} onChange={this.onChange} />
-                    <Input name="password" label="Password" error={password} onChange={this.onChange} />
-                    <Input name="passwordRepeat" label="Password Repeat" error={passwordRepeat} onChange={this.onChange} />
+                    <Input name="password" label="Password" error={password} onChange={this.onChange} type="password"/>
+                    <Input name="passwordRepeat" label="Password Repeat"  error={passwordRepeat} onChange={this.onChange} type="password"/>
 
                     {/*<div className="mb-3">
                         <label>User Name</label>
