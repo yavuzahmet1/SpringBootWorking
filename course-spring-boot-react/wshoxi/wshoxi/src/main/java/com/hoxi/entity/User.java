@@ -1,7 +1,9 @@
 package com.hoxi.entity;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
 import lombok.Data;
+
 
 @Entity
 @Data
@@ -10,8 +12,11 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @NotNull
     private String userName;
+    @NotNull
     private String displayName;
+    @NotNull
     private String password;
 
 
