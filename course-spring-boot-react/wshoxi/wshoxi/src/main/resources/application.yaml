@@ -1,15 +1,17 @@
-server:
-  port: 8085
-spring:
-  datasource:
-    url: jdbc:h2:./devdb
-    username: sa
-  jpa:
-    hibernate:
-      ddl-auto: update
+#server:
+#  port: 8085
+  #spring:
+  #    datasource:
+  #      url: jdbc:h2:./devdb
+  #      username: sa
+  #    jpa:
+  #      hibernate:
+  #        ddl-auto: update
+#  spring:
+#  jpa:
+#    properties:
+#      javax:
+#        persistence:
+#          validation:
+#            mode:none
 
-    properties:
-      javax:
-        persistence:
-          validation:
-            mode=none:

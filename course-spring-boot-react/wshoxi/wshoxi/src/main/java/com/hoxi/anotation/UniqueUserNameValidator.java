@@ -4,12 +4,14 @@ import com.hoxi.entity.User;
 import com.hoxi.repository.UserRepository;
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.lang.annotation.Annotation;
 
 public class UniqueUserNameValidator implements ConstraintValidator<UniqueUserName, String> {
     private UserRepository userRepository;
 
+    @Autowired
     public UniqueUserNameValidator(UserRepository userRepository) {
         this.userRepository = userRepository;
     }

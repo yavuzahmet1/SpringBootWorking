@@ -18,7 +18,16 @@ class UserSingupPage extends React.Component {
 
         const { name, value } = event.target; //object destructure anlamına gelir kullnımı best prectisedir
         const errors = { ...this.state.errors }
-        errors[name] = undefined
+        errors[name] = undefined;
+        if (name === 'password' || name === 'passportRepeat') {
+            if (name === 'password' && value !== this.state.passwordRepeat) {
+                errors.passwordRepeat = 'passwort mismatch';
+            } else if (name === 'passwordRepeat' && value !== this.state.password) {
+                errors.passwordRepeat = 'passwort mismatch';
+            } else {
+                errors.passwordRepeat = undefined;
+            }
+        }
         this.setState({
             [name]: value,
             errors
@@ -56,7 +65,7 @@ class UserSingupPage extends React.Component {
 
     render() {
         const { pendingApiCall, errors } = this.state;
-        const { userName, displayName,password,passwordRepeat } = errors;
+        const { userName, displayName, password, passwordRepeat } = errors;
         return (
 
             <div className="container">
@@ -64,8 +73,8 @@ class UserSingupPage extends React.Component {
                     <h1 className="text-center">Sign Up</h1>
                     <Input name="userName" label="User Name" error={userName} onChange={this.onChange} />
                     <Input name="displayName" label="Display Name" error={displayName} onChange={this.onChange} />
-                    <Input name="password" label="Password" error={password} onChange={this.onChange} type="password"/>
-                    <Input name="passwordRepeat" label="Password Repeat"  error={passwordRepeat} onChange={this.onChange} type="password"/>
+                    <Input name="password" label="Password" error={password} onChange={this.onChange} type="password" />
+                    <Input name="passwordRepeat" label="Password Repeat" error={passwordRepeat} onChange={this.onChange} type="password" />
 
                     {/*<div className="mb-3">
                         <label>User Name</label>
@@ -89,7 +98,7 @@ class UserSingupPage extends React.Component {
                         <button
                             className="btn btn-primary"
                             onClick={this.onClickSignup}
-                            disabled={pendingApiCall}>
+                            disabled={pendingApiCall || passwordRepeat !== undefined}>
                             {pendingApiCall && <span class="spinner-border spinner-border-sm"></span>}
                             Sing Up
                         </button>
