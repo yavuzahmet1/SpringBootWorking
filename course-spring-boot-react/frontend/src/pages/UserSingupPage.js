@@ -3,6 +3,7 @@ import React from "react";
 //import axios from "axios";//buna gerek kalmadı importumuz artık api clasörü içinden
 import { signUp } from '../api/apiCalls';
 import Input from "../components/input";
+import { withTranslation } from 'react-i18next';
 
 class UserSingupPage extends React.Component {
     state = {
@@ -103,6 +104,9 @@ class UserSingupPage extends React.Component {
                             Sing Up
                         </button>
                     </div>
+                    <div>
+                        
+                    </div>
 
                 </form>
             </div>
@@ -110,7 +114,11 @@ class UserSingupPage extends React.Component {
         );
     }
 
-} export default UserSingupPage;
+} 
+
+const UserSingupPageWithTranslation=withTranslation()(UserSingupPage);
+
+export default UserSingupPageWithTranslation;
 
 /**/
 
