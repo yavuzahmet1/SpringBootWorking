@@ -4,13 +4,14 @@ import './index.css';
 import App from './App';
 import './bootstrap-override.scss'
 import UserSingupPage from './pages/UserSingupPage';
+import LoginPage from './pages/LoginPage';
 import reportWebVitals from './reportWebVitals';
 import './i18n';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <UserSingupPage />
+    <LoginPage />
   </React.StrictMode>
 );
 
