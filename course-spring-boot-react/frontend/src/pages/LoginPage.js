@@ -1,19 +1,31 @@
 import React, { Component } from 'react';
 import Input from '../components/input'
+import { login } from '../api/apiCalls';
 
 class LoginPage extends Component {
-    state={
-        userName:null,
-        password:null
+    state = {
+        userName: null,
+        password: null
 
     }
 
-    onChange=event=>{
-        const{name,value}=event.target;
+    onChange = event => {
+        const { name, value } = event.target;
         this.setState({
-            [name]:value
-        })
+            [name]: value
+        });
+    };
+
+    onClickLogin = event => {
+        event.preventDefault();
+        const{userName,password}=this.state;
+        const creds = {
+            userName,
+            password
+        }
+        login(creds)
     }
+
     render() {
         return (
             <div className='container'>
@@ -22,7 +34,7 @@ class LoginPage extends Component {
                     <Input label='User Name' name='userName' onChange={this.onChange} />
                     <Input label='Password' name='password' type='password' onChange={this.onChange} />
                     <div className='text-center'>
-                        <button className='btn btn-primary'>Login</button>
+                        <button className='btn btn-primary' onClick={this.onClickLogin}>Login</button>
                     </div>
 
 
